@@ -17,8 +17,7 @@ for (const [w,h,tag] of [[390,844,'m'],[360,780,'s'],[1440,900,'d']]) {
   out.push(`${tag} console: ${errs.length? errs.join(' | ') : 'clean'}`);
   await ctx.close();
 }
-// OG 이미지
-const ctx = await b.newContext({ viewport: { width: 1200, height: 630 } }); const p = await ctx.newPage();
-await p.setContent(`<html><head><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700&family=JetBrains+Mono&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"><style>body{margin:0;width:1200px;height:630px;background:#F3EFE6;color:#15140F;font-family:'Pretendard Variable',sans-serif;position:relative;overflow:hidden}body:before{content:'';position:absolute;inset:0;background-image:linear-gradient(to bottom,rgba(21,20,15,.06) 1px,transparent 1px);background-size:100% 32px}.m{position:absolute;left:72px;top:64px;font-family:'JetBrains Mono';font-size:18px;letter-spacing:.08em;color:#6F6A5D}h1{position:absolute;left:72px;top:150px;margin:0;font-family:'Noto Serif KR';font-size:92px;line-height:1.04;letter-spacing:-.02em;word-break:keep-all}h1 em{font-style:normal;color:#C8451B}.f{position:absolute;left:72px;bottom:64px;right:72px;border-top:1px solid rgba(21,20,15,.4);padding-top:22px;display:flex;justify-content:space-between;font-size:24px}.f b{font-family:'Noto Serif KR'}</style></head><body><div class="m">GYUCHEOL CHOI — BI / DASHBOARD FULL-STACK</div><h1>운영 DB를 지키면서<br><em>빠르게 보여주는</em><br>BI를 만듭니다.</h1><div class="f"><span><b>최규철</b> · 비즈플러그 GraeEye 전담 개발</span><span>PR 1,114 · 테스트 파일 1,573</span></div></body></html>`, { waitUntil: 'networkidle' });
-await p.waitForTimeout(1500); await p.screenshot({ path: new URL('../public/og.png', import.meta.url).pathname });
+// OG 이미지는 scripts/og.html 을 렌더 (새 톤)
+const ctx2 = await b.newContext({ viewport: { width: 1200, height: 630 } }); const p2 = await ctx2.newPage();
+await p2.goto(new URL('./og.html', import.meta.url).href, { waitUntil: 'networkidle' }); await p2.waitForTimeout(1500); await p2.screenshot({ path: new URL('../public/og.png', import.meta.url).pathname });
 await b.close(); console.log(out.join('\n'));

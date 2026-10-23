@@ -1,0 +1,55 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>시안 A — 터미널 다크 · 데이터 전광판</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+:root{--bg:#0A0C10;--bg2:#10141B;--panel:#141922;--line:#222A36;--fg:#E8ECF2;--fg2:#9AA5B5;--muted:#5C6675;--acc:#3DFF9A;--acc2:#FFB347;--mono:'JetBrains Mono',monospace;--sans:'Pretendard Variable',sans-serif;--disp:'Space Grotesk','Pretendard Variable',sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.6;word-break:keep-all}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 30% 0%,#000 30%,transparent 75%)}
+a{color:inherit;text-decoration:none}.wrap{max-width:1360px;margin:0 auto;padding:0 40px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg2)}
+.nav b{color:var(--acc);font-weight:500}.nav b::before{content:'● ';}.nav span+span{margin-left:26px}
+.hero{padding:96px 0 56px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end}
+.tag{font-family:var(--mono);font-size:12px;color:var(--acc);letter-spacing:.1em;text-transform:uppercase;margin-bottom:22px}.tag::before{content:'$ ';color:var(--muted)}
+h1{font-family:var(--disp);font-size:clamp(44px,6.4vw,92px);line-height:1;letter-spacing:-.03em;margin:0;font-weight:700}h1 em{font-style:normal;color:var(--acc)}
+.lede{color:var(--fg2);font-size:18px;max-width:52ch;margin-top:26px}
+.btns{margin-top:30px;display:flex;gap:12px}.btn{font-family:var(--mono);font-size:13px;padding:12px 18px;border:1px solid var(--line);border-radius:4px;color:var(--fg)}.btn.p{background:var(--acc);color:#061A0F;border-color:var(--acc);font-weight:700}
+.board{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:18px;font-family:var(--mono);font-size:12px}
+.board h4{margin:0 0 12px;font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;display:flex;justify-content:space-between}.board h4 i{color:var(--acc);font-style:normal}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:14px}.tile b{display:block;font-size:30px;font-weight:700;letter-spacing:-.02em;color:#fff;font-family:var(--disp)}.tile span{color:var(--fg2);font-size:12px}
+.spark{height:46px;margin-top:8px}.spark polyline{fill:none;stroke:var(--acc);stroke-width:1.5}.spark .area{fill:url(#g);stroke:none}
+.log{margin-top:12px;color:var(--fg2);line-height:1.8}.log .ok{color:var(--acc)}.log .w{color:var(--acc2)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:56px}
+.stat{padding:22px 24px;border-right:1px solid var(--line);background:var(--bg2)}.stat:last-child{border:0}.stat b{display:block;font-family:var(--disp);font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:1}.stat span{color:var(--fg2);font-size:13px;display:block;margin-top:8px}.stat small{font-family:var(--mono);color:var(--muted);font-size:11px}
+.sec{padding-top:96px}.sh{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px}.sh h2{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg2);margin:0}.sh h2::before{content:'// ';color:var(--muted)}.sh p{margin:0;color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}.card:hover{border-color:var(--acc);transform:translateY(-3px)}
+.card .k{font-family:var(--mono);font-size:11px;color:var(--acc);letter-spacing:.08em;text-transform:uppercase}.card h3{font-family:var(--disp);font-size:28px;letter-spacing:-.02em;margin:10px 0 10px;line-height:1.15}.card p{color:var(--fg2);font-size:15px;margin:0 0 20px}
+.card .m{display:flex;gap:28px;border-top:1px solid var(--line);padding-top:16px}.card .m b{display:block;font-family:var(--mono);font-size:20px;color:#fff}.card .m span{font-size:12px;color:var(--muted)}
+.card .n{position:absolute;right:22px;top:20px;font-family:var(--mono);font-size:60px;color:var(--line);font-weight:700;line-height:1}
+.foot{margin-top:96px;border-top:1px solid var(--line);padding:28px 0 40px;font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;justify-content:space-between}
+@media(max-width:900px){.hero,.cards{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.wrap{padding:0 20px}.nav{padding:16px 20px}}
+</style></head><body>
+<div class="nav"><b>gyucheol.choi</b><div><span>work</span><span>method</span><span>path</span><span>contact</span><span>resume.pdf</span></div></div>
+<div class="wrap">
+<section class="hero"><div>
+<div class="tag">BI / dashboard full-stack · Suwon · 2026</div>
+<h1>운영 DB를 지키면서<br><em>빠르게 보여주는</em><br>BI를 만듭니다.</h1>
+<p class="lede">셀프서비스 BI 편집기 GraeEye를 입사 첫날부터 혼자 설계·구현해 공공기관 폐쇄망 서버에 설치·운영하고 있습니다. 숫자가 맞는지는 가설이 아니라 실측으로 확인합니다.</p>
+<div class="btns"><a class="btn p" href="#">./work</a><a class="btn" href="#">resume.pdf ↓</a></div>
+</div>
+<div class="board"><h4>live · graeeye.v0.6 <i>● 49d uptime</i></h4>
+<div class="tiles"><div class="tile"><b>1,114</b><span>merged PRs</span></div><div class="tile"><b>1,573</b><span>test files</span></div><div class="tile"><b>p99 3.4s</b><span>5 users × 3 runs</span></div><div class="tile"><b>0.11MB</b><span>login payload (gz)</span></div></div>
+<svg class="spark" viewBox="0 0 400 46" preserveAspectRatio="none"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#3DFF9A" stop-opacity=".35"/><stop offset="1" stop-color="#3DFF9A" stop-opacity="0"/></linearGradient></defs><polygon class="area" points="0,46 0,38 40,34 80,36 120,22 160,26 200,14 240,18 280,9 320,12 360,5 400,8 400,46"/><polyline points="0,38 40,34 80,36 120,22 160,26 200,14 240,18 280,9 320,12 360,5 400,8"/></svg>
+<div class="log"><span class="ok">✓</span> statement_timeout 60s · <span class="ok">✓</span> row cap 30,000 · <span class="w">!</span> 79MB → 12MB (truncated, notified)<br><span class="ok">✓</span> classify: DROP in /* nested */ → write · <span class="ok">✓</span> pg_cancel_backend on disconnect</div></div>
+</section>
+<div class="stats"><div class="stat"><b>1,114</b><span>머지된 PR</span><small>2026.07–10 · 단독 작성</small></div><div class="stat"><b>1,573</b><span>테스트 파일</span><small>unit · http · realdb · e2e16</small></div><div class="stat"><b>3</b><span>DB 방언</span><small>mysql · postgres · oracle</small></div><div class="stat"><b>49d</b><span>무중단 가동</span><small>서울시설공단 v0.5.0</small></div></div>
+<section class="sec"><div class="sh"><h2>flagship work — GraeEye</h2><p>각 케이스에 직접 만지는 데모</p></div>
+<div class="cards">
+<div class="card"><span class="n">01</span><span class="k">조회 상한 · 시간 상한 · 끊김 취소</span><h3>운영 DB 보호 관문</h3><p>19.8만 행 피벗 하나가 서버 메모리를 473MB 늘리던 경로를, 고객 서버 사양에서 역산한 상한으로 닫았습니다.</p><div class="m"><div><b>79→12MB</b><span>응답 상한</span></div><div><b>176→2.3s</b><span>상한 밖 COUNT</span></div><div><b>15/15</b><span>3종 DB 시험</span></div></div></div>
+<div class="card"><span class="n">02</span><span class="k">렉서 기반 · 세 방언 합집합</span><h3>SQL 쓰기 판정 분류기</h3><p>키워드 앞머리 목록으로 SQL을 거르던 분류기를, 주석·문자열·방언 모드를 전부 읽는 렉서로 바꿨습니다.</p><div class="m"><div><b>138</b><span>표 시험</span></div><div><b>39/39</b><span>뮤턴트 사망</span></div><div><b>P0</b><span>종결</span></div></div></div>
+<div class="card"><span class="n">03</span><span class="k">차트 클릭 → 분할 제안 → 하강</span><h3>계층 선언 없는 자동 탐색</h3><p>드릴다운 계층을 미리 설정하지 않아도, 막대를 클릭한 자리에서 무엇으로 쪼갤 수 있는지를 실제 수치와 함께 보여줍니다.</p><div class="m"><div><b>Top 3</b><span>분할 후보</span></div><div><b>0</b><span>부당 제외</span></div><div><b>12차</b><span>교차검토</span></div></div></div>
+<div class="card"><span class="n">04</span><span class="k">압축 파일 하나 · 스크립트 2개</span><h3>폐쇄망 오프라인 배포</h3><p>인터넷이 없는 공공기관 서버에 원격으로 설치하고, 저속 회선에서 부팅조차 못 하던 설치본을 30.2MB → 0.11MB로 줄였습니다.</p><div class="m"><div><b>0.11MB</b><span>로그인 전 gz</span></div><div><b>49d</b><span>가동</span></div><div><b>2</b><span>회귀 사전 수리</span></div></div></div>
+</div></section>
+<div class="foot"><span>© 2026 gyucheol choi</span><span>sorlros2047@gmail.com · github.com/sorlros</span></div>
+</div></body></html>

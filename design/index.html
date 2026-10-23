@@ -1,0 +1,17 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>포트폴리오 디자인 시안 비교</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>body{margin:0;background:#141414;color:#eee;font-family:'Pretendard Variable',sans-serif;padding:28px}h1{font-size:22px;margin:0 0 6px}p{margin:0 0 22px;color:#aaa;font-size:14px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:22px}.c{background:#1c1c1c;border:1px solid #2c2c2c;border-radius:10px;overflow:hidden}
+.c h2{font-size:15px;margin:0;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}.c h2 a{color:#8ab4ff;font-size:12px;text-decoration:none;border:1px solid #345;padding:4px 10px;border-radius:999px}
+.c h2 small{color:#888;font-weight:400;margin-left:8px}
+.f{width:100%;aspect-ratio:16/10;position:relative;overflow:hidden;background:#000}.f iframe{width:1440px;height:900px;border:0;transform-origin:0 0;transform:scale(var(--s));position:absolute;left:0;top:0;pointer-events:none}
+@media(max-width:1100px){.g{grid-template-columns:1fr}}</style></head><body>
+<h1>포트폴리오 디자인 시안 4종</h1><p>문구·수치는 전부 같고 시각 언어만 다릅니다. 카드 제목 옆 "크게 보기"로 실제 크기로 열어 스크롤하면서 비교하세요. 섞어도 됩니다(예: B 타이포 + A 전광판).</p>
+<div class="g">
+<div class="c"><h2>A · 터미널 다크 전광판<small>BI 제품 느낌 · 그린 액센트 · 모노스페이스</small><a href="A-terminal-dark.html" target="_blank">크게 보기 ↗</a></h2><div class="f"><iframe src="A-terminal-dark.html"></iframe></div></div>
+<div class="c"><h2>B · 스위스 그리드 볼드<small>흰 바탕 · 극대 그로테스크 · 빨강 한 점</small><a href="B-swiss-bold.html" target="_blank">크게 보기 ↗</a></h2><div class="f"><iframe src="B-swiss-bold.html"></iframe></div></div>
+<div class="c"><h2>C · 블루프린트 도면<small>남색 바탕 · 도면 격자 · 치수선·FIG 번호</small><a href="C-blueprint.html" target="_blank">크게 보기 ↗</a></h2><div class="f"><iframe src="C-blueprint.html"></iframe></div></div>
+<div class="c"><h2>D · 모노크롬 + 네온 키네틱<small>검정 바탕 · 대문자 Archivo · 형광 라임 · 마퀴·릴</small><a href="D-mono-neon.html" target="_blank">크게 보기 ↗</a></h2><div class="f"><iframe src="D-mono-neon.html"></iframe></div></div>
+</div>
+<script>const fit=()=>document.querySelectorAll('.f').forEach(f=>f.style.setProperty('--s',f.clientWidth/1440));fit();addEventListener('resize',fit)</script>
+</body></html>
