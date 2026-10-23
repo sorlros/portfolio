@@ -318,3 +318,17 @@ code { font-family: var(--mono); font-size: .88em; color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
 }
+
+/* ───── 역할 분류 데모 ───── */
+.roles { display: grid; gap: 8px; }
+.roles__row { display: grid; grid-template-columns: 44px 1fr 1.1fr; gap: 14px; align-items: center; padding: 10px 12px; border: 1px solid var(--line-strong); border-radius: 4px; background: var(--bg); }
+.badge { width: 36px; height: 36px; border-radius: 6px; border: 2px solid var(--accent); color: var(--accent); font-family: var(--display); font-weight: 900; font-size: 1.1rem; display: grid; place-items: center; transition: background .3s, color .3s; }
+.badge:hover { background: var(--accent); color: var(--accent-ink); }
+.badge--low { border-style: dashed; opacity: .85; }
+.badge--fixed { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.roles__row b { font-family: var(--mono); font-size: .86rem; }
+.roles__type { font-family: var(--mono); font-size: .66rem; color: var(--muted); margin-left: 6px; }
+.roles__samples { font-family: var(--mono); font-size: .68rem; color: var(--fg-2); margin-top: 4px; }
+.roles__v strong { display: block; font-size: .92rem; }
+.roles__v small { display: block; font-size: .74rem; color: var(--fg-2); line-height: 1.4; }
+@media (max-width: 700px) { .roles__row { grid-template-columns: 44px 1fr; } .roles__v { grid-column: 2; } }

@@ -8,9 +8,11 @@ import { QueryGate } from './pages/cases/QueryGate';
 import { SqlClassifier } from './pages/cases/SqlClassifier';
 import { Exploration } from './pages/cases/Exploration';
 import { OfflineDeploy } from './pages/cases/OfflineDeploy';
+import { Automation } from './pages/cases/Automation';
 
 const ROUTES: Record<string, () => React.JSX.Element> = {
   '/': Home,
+  '/work/automation': Automation,
   '/work/query-gate': QueryGate,
   '/work/sql-classifier': SqlClassifier,
   '/work/exploration': Exploration,

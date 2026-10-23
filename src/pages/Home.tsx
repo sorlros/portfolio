@@ -6,7 +6,7 @@ import { Contact, Nav } from '../components/Chrome';
 import { Fig } from '../components/Fig';
 
 const KINDS: (WorkKind | '전체')[] = ['전체', 'BI', 'Systems', 'AI', 'Web'];
-const MARQ = ['1,114 merged PRs', '1,573 test files', '3 SQL dialects', '49 days uptime', '0.11MB login payload', 'PGlite offline install'];
+const MARQ = ['1,114 merged PRs', '1,573 test files', '21 dashboard templates', '102 golden cases', '3 SQL dialects', '49 days uptime', '0.11MB login payload'];
 
 export function Home() {
   const scope = useRef<HTMLDivElement>(null);
@@ -55,7 +55,7 @@ export function Home() {
         </section>
 
         <section className="section wrap" id="work" aria-labelledby="work-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="work-h">Sheet 01 — Flagship work, GraeEye</span><p>셀프서비스 BI 편집기를 전담하며 풀어낸 문제 네 가지 · 각 플레이트에 직접 만지는 데모</p></div>
+          <div className="sh" data-reveal=""><span className="lbl" id="work-h">Sheet 01 — Flagship work, GraeEye</span><p>셀프서비스 BI 편집기를 전담하며 기획·설계·구현한 문제 다섯 가지 · 각 플레이트에 직접 만지는 데모</p></div>
           <div className="flag" role="list">
             {FLAGSHIPS.map((f) => (
               <Link key={f.slug} href={f.path} label={f.name} color={f.accent} className="flag__card corner" role="listitem" data-reveal="" data-cursor="Open">
