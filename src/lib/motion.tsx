@@ -48,7 +48,7 @@ export function Scrub({ text, className }: { text: string; className?: string })
   );
 }
 
-const SITE = 'https://portfolio-sorlros.vercel.app';
+const SITE = 'https://portfolio-woad-zeta-55.vercel.app';
 export function useMeta(title: string, description: string, themeColor = '#F3EFE6', path = '/') {
   useEffect(() => {
     document.title = title;
