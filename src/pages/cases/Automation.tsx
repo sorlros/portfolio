@@ -5,6 +5,12 @@ const f = FLAGSHIPS[0];
 export function Automation() {
   return (
     <CaseShell f={f}>
+      <section className="wrap" aria-label="실제 화면">
+        <div className="shots" data-reveal="">
+          <figure className="shot corner"><span className="fig__t">Fig.0 — 미리보기 (실제 제품 · 가상 데이터)</span><img src="/shots/graeeye-preview.png" alt="GraeEye 미리보기 화면: 따릉이 이용 현황 대시보드. 조회 기간·자치구 조건, KPI 4개(대여 건수·자전거당 회전율·평균 이용 시간·정기권 비중), 일별 대여 건수·강수량 차트, 이용권 구성 도넛, 자치구별 대여 막대" loading="lazy" /></figure>
+          <figure className="shot corner"><span className="fig__t">Fig.0b — 편집 화면</span><img src="/shots/graeeye-editor.png" alt="GraeEye 편집 화면: 왼쪽 화면 목록·데이터 소스, 가운데 캔버스, 오른쪽 페이지 설정 패널" loading="lazy" /></figure>
+        </div>
+      </section>
       <Block n="문제" title="쿼리를 완성해도 대시보드에 도달하지 못했습니다">
         <p>공개 차트(수도 인구 100% 스택)를 GraeEye만으로 재현해 보는 실사용성 실험의 종합 판정은 "쿼리를 미리 복합적으로 만들지 않으면 차트 UI만으로는 재현 불가"였습니다. 커넥션 등록 5단계 순환, 차트 위 드롭이 그리드를 새로 만듦, 다중 지표 자동 매핑 어긋남 등 불편 15건을 사용자 흐름 순으로 적었습니다. 쿼리를 완성해도 차트 타입·필드 매핑·KPI/표 배치를 전부 수동으로 판단해야 했고, 첫 배포는 AI 전면 비활성(폐쇄망)이라 LLM에 맡길 수도 없었습니다.</p>
         <p>중심 질문을 하나로 두었습니다. <b>비개발자가 SQL·차트 지식 없이 몇 번의 조작으로 믿을 수 있는 대시보드에 도달하는가.</b></p>
