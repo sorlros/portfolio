@@ -348,3 +348,6 @@ code { font-family: var(--mono); font-size: .88em; color: var(--accent); }
 .shot { position: relative; margin: 0; border: 1px solid var(--line-strong); border-radius: 4px; padding: 14px; background: rgba(7,13,26,.7); }
 .shot img { width: 100%; height: auto; border-radius: 2px; display: block; }
 @media (max-width: 1000px) { .shots { grid-template-columns: 1fr; } }
+
+.case__body h3.sub { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 26px 0 10px; font-weight: 500; }
+.case__body h3.sub:first-of-type { margin-top: 4px; }

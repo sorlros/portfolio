@@ -45,7 +45,7 @@ export const FLAGSHIPS: Flagship[] = [
     metrics: [
       { value: '1 → 4', label: '단추 1개로 제목·KPI·차트·그리드 배치' },
       { value: '720', label: '분류기 블라인드 시행 · 확신 정확도 100%' },
-      { value: '51 → 102', label: '골든셋 케이스 · 1위 수용률 100%' },
+      { value: '88.8 → 100%', label: '정답지 검수 후 1순위 적중 회복' },
       { value: '2,294', label: '가중치 캘리브레이션 조합' },
     ],
     accent: '#B98CFF', bg: '#070D1A', fg: '#EAF0FF',
