@@ -70,9 +70,7 @@ export function Contact() {
     <section className="contact wrap" id="contact" aria-labelledby="contact-h">
       <div className="contact__grid">
         <div>
-          <p className="lbl" data-reveal="">Sheet 06 — Contact</p>
-          <h2 className="contact__title" id="contact-h" data-reveal="">편하게 연락 주세요.</h2>
-          <p className="contact__sub" data-reveal="">채용 제안, 협업, 작업에 대한 질문 모두 이메일로 받습니다.</p>
+          <h2 className="lbl" id="contact-h" data-reveal="">Sheet 06 — Contact</h2>
           <div className="contact__links" data-reveal="">
             <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
             <a href={PROFILE.github} target="_blank" rel="noopener noreferrer">github.com/sorlros</a>

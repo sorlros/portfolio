@@ -180,7 +180,7 @@ code { font-family: var(--mono); font-size: .88em; color: var(--accent); }
 .contact { padding-top: var(--section); padding-bottom: 40px; }
 .contact__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 6vw, 6rem); border-top: 1px solid var(--line-strong); padding-top: 30px; }
 .contact__title { font-size: var(--h-lg); line-height: 1.05; letter-spacing: -.03em; font-weight: 800; }
-.contact__links { margin-top: 26px; display: grid; gap: 10px; }
+.contact__links { margin-top: 22px; display: grid; gap: 10px; }
 .contact__links a { font-size: 1.02rem; display: inline-flex; align-items: baseline; gap: 10px; width: fit-content; position: relative; font-family: var(--mono); font-size: .86rem; }
 .contact__links a::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px; background: var(--accent); transform: scaleX(1); transform-origin: left; transition: transform .45s var(--ease); }
 .contact__links a:hover::after { transform: scaleX(0); transform-origin: right; }
@@ -353,3 +353,5 @@ code { font-family: var(--mono); font-size: .88em; color: var(--accent); }
 .case__body h3.sub:first-of-type { margin-top: 4px; }
 
 .contact__sub { margin-top: 14px; color: var(--fg-2); font-size: var(--lede); max-width: 40ch; }
+
+h2.lbl { font-weight: 500; }
