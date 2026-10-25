@@ -139,8 +139,8 @@ export const WORKS: { name: string; blurb: string; stack: string[]; kind: WorkKi
   { name: 'NovelAIne', blurb: 'AI 대화형 소설·자동 삽화. pgvector RAG 선택적 기억 + Summary Buffer로 긴 서사의 설정 오류·토큰 낭비 감소, 중요도 점수 임계치에서만 삽화 생성.', stack: ['Flutter', 'FastAPI', 'Supabase'], kind: 'AI', year: '2026', href: 'https://github.com/sorlros/NovelAIne' },
   { name: 'Orbit Agent Web', blurb: 'LangGraph 멀티에이전트(Manager·Backend·Frontend·QA·Reporter) 오케스트레이터의 웹 클라이언트. pgvector RAG로 과거 맥락 주입, 백그라운드 요약.', stack: ['React', 'Vite', 'LangGraph'], kind: 'AI', year: '2026', href: 'https://github.com/sorlros/multi-agent-bot-web' },
   { name: 'ServerOps Simulator', blurb: '웹 터미널에서 디스크 부족·OOM·Nginx 502·커넥션 풀 고갈·배포 롤백 6개 장애를 상태머신으로 재현하는 운영 학습 도구. DDD/TDD 구조.', stack: ['Next.js', 'TypeScript'], kind: 'Web', year: '2026', href: 'https://github.com/sorlros/server-ops-sim' },
-  { name: 'Wall-E 외벽 균열 탐지', blurb: '드론 영상에서 YOLOv11로 균열 탐지, MobileNetV3 임베딩 코사인 유사도로 중복 저장 차단. FastAPI 3-트랙 비동기 + MJPEG/WebSocket + Flutter. 16일 팀 프로젝트.', stack: ['YOLO', 'FastAPI', 'Flutter'], kind: 'AI', year: '2026', href: 'https://github.com/sorlros/WALL-E' },
-  { name: '2022 ~ 2024 웹앱 20여 개', blurb: 'Vue 3에서 React/Next.js로 옮겨 오며 실시간 채팅, 쇼핑몰, 노션·트렐로·에어비앤비 클론 등을 TypeScript로 구현·배포.', stack: ['React', 'Next.js', 'TypeScript'], kind: 'Web', year: '2022–24', href: 'https://github.com/sorlros?tab=repositories' },
+  { name: 'Wall-E 외벽 균열 탐지 · 팀장', blurb: '16일 4인 팀 프로젝트 팀장. 전체 계획·아키텍처 설계, 드론 카메라 영상 수신·전송 서버(RTMP → MediaMTX → FastAPI), YOLOv11 탐지 → 창문 블러 → MobileNetV3 Re-ID 중복 차단의 3-트랙 비동기 추론 파이프라인 등 백엔드 담당.', stack: ['FastAPI', 'YOLOv11', 'MediaMTX', 'WebSocket'], kind: 'AI', year: '2026', href: 'https://github.com/sorlros/WALL-E' },
+  { name: 'pick-your-maps · SavvyWallet 외 웹앱 20여 개', blurb: 'Vue 3에서 React/Next.js로 옮겨 오며 만든 것들. pick-your-maps(Express API + Google Maps, Render·Vercel 분리 배포), SavvyWallet(지출 시각화 가계부), All-You-Have-To-do(Firebase 실시간 알림), typing-magician, lol-info 등.', stack: ['Next.js', 'Express', 'MongoDB', 'Prisma'], kind: 'Web', year: '2022–24', href: 'https://github.com/sorlros?tab=repositories' },
 ];
 
 export const CAPABILITIES: { title: string; items: string[] }[] = [
@@ -155,7 +155,7 @@ export const CAPABILITIES: { title: string; items: string[] }[] = [
 
 export const PATH: { when: string; what: string; detail: string }[] = [
   { when: '2026.06 — 현재', what: '비즈플러그 · 풀스택 개발자', detail: '기본 구조가 있던 GraeEye BI 편집기를 이어받아 전담 개선·확장. 서울시설공단 폐쇄망 설치(08) → 재배포(10).' },
-  { when: '2026.01 — 05', what: '1인 개발 · AI 응용', detail: 'NovelAIne, Orbit Agent Web, ServerOps Simulator, Wall-E 팀 프로젝트.' },
+  { when: '2026.01 — 05', what: '1인 개발 · AI 응용', detail: 'NovelAIne, Orbit Agent Web, ServerOps Simulator, Wall-E(팀장 · 아키텍처 · 영상 서버 · AI 추론 백엔드).' },
   { when: '2022 — 2024', what: '1인 개발 · 웹', detail: 'Vue 3 → React/Next.js. TypeScript 웹앱 20여 개 구현·배포.' },
   { when: '2011 — 2018', what: '충북대학교 바이오시스템공학과', detail: '중퇴. GTQ 1급(2020), 웹디자인기능사(2011).' },
 ];
