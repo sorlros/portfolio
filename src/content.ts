@@ -149,6 +149,7 @@ export const CAPABILITIES: { title: string; items: string[] }[] = [
   { title: '운영 DB 보호·성능', items: ['용도별 행/바이트 상한', '방언별 실행 시간 상한', '요청 끊김 시 쿼리 취소', '동시 부하 실측으로 기본값 도출'] },
   { title: '보안·권한', items: ['SQL 인젝션 전수조사 · AST 허용목록', '렉서 기반 SQL 쓰기 판정', 'JWT 세션 결속 · OAuth2/OIDC · SAML', '5단계 RBAC · 연결 소유권(IDOR) 차단'] },
   { title: '배포·운영', items: ['폐쇄망 오프라인 패키지 · 원클릭 설치', 'Apache TLS · systemd · 사전압축', '임베디드 PGlite ↔ PostgreSQL 전환', 'Rocky/Ubuntu 원격 설치·재배포'] },
+  { title: 'AI 에이전트 운용', items: ['구현(Claude Code) · 교차검토(Codex) 분리 운용', '8개 절 고정 검토 의뢰서 · 지적 재현 후 판정', '계획/구현 모델 분리 · 작업 라우팅 훅 자작', '세션 간 메모리 · 작업기록으로 맥락 인계'] },
   { title: '품질 방법론', items: ['TDD · red-first · 뮤턴트 사망 확인', 'Docker 실DB 통합 · HTTP 경계 시험', 'Playwright E2E · 골든셋/블라인드 하네스', 'PR 5요소 · 작업기록 362편 · ADR'] },
   { title: 'AI 응용', items: ['RAG(ChromaDB · pgvector) 문서 QA', 'LLM 게이트웨이(OpenAI · Claude · Ollama)', 'NL→SQL(DB 능력 탐침 → 제약 프롬프트)', 'LangGraph 멀티에이전트'] },
 ];
@@ -163,11 +164,27 @@ export const PATH: { when: string; what: string; detail: string }[] = [
 export const NAV = [
   { label: '작업', href: '/#work' },
   { label: '방식', href: '/#about' },
+  { label: 'AI', href: '/#agents' },
   { label: '이력', href: '/#path' },
   { label: '연락', href: '/#contact' },
 ];
 
+export const AI_FLOW: { step: string; who: string; body: string }[] = [
+  { step: '01 결정', who: '나', body: '무엇을 만들지 정합니다. 인터뷰 형식으로 질문을 받아 결정표(Q1~Qn)를 만들고, 결정 전후를 목업 HTML로 비교한 뒤 확정합니다. 작업기록 85편에 "사용자 결정 MM-DD"로 남아 있습니다.' },
+  { step: '02 구현', who: '구현 에이전트', body: 'Claude Code가 계획 파일만 받아 테스트 먼저(red) → 구현(green)으로 씁니다. 계획은 상위 모델, 구현은 하위 모델에 위임하도록 운용 설정을 직접 구성했습니다.' },
+  { step: '03 교차검토', who: '검토 에이전트', body: '별도 워크트리의 Codex가 8개 절 고정 양식의 의뢰서(계약·대상·관측 경계·재현·증거)를 받아 검토합니다. 지적은 수리 전에 재현해 확인/반증/불확실로 나눕니다. 왕복 문서 110여 편, 최대 13차.' },
+  { step: '04 검증', who: '나', body: '에이전트의 "완료" 보고는 믿지 않습니다. 시험을 다시 돌리고 diff를 보고, 가드를 하나씩 지운 뮤턴트가 죽는지, 실제 DB와 브라우저에서 숫자가 맞는지 직접 확인한 뒤 머지합니다.' },
+];
+
+export const AI_STATS: Metric[] = [
+  { value: '1,114', label: 'PR 전부 생성 도구 표기', note: '본문 5요소 + Claude Code 표기' },
+  { value: '110+', label: '교차검토 왕복 문서', note: '구현 ↔ 검토 에이전트, 최대 13차' },
+  { value: '85', label: '"사용자 결정" 기록 문서', note: '결정표 · 목업 · ADR' },
+  { value: '200+', label: '세션 간 메모리 노트', note: '결정 · 함정 · 절차를 다음 세션에 인계' },
+];
+
 export const PRINCIPLES: { title: string; body: string }[] = [
+  { title: 'AI 에이전트는 손, 결정과 검증은 내가', body: '5개월에 PR 1,114건은 구현·교차검토 에이전트를 나눠 운용했기에 가능했습니다. 무엇을 만들지, 맞게 만들었는지는 제가 정하고 확인합니다.' },
   { title: '틀릴 수 있는 추정은 드러내고, 정정은 지킨다', body: '역할 분류기의 저확신은 점선 뱃지로 보여주고 클릭 한 번으로 고치게 합니다. 사람이 고친 값은 자동 분류가 다시 덮지 못합니다. 추천 순위는 정량 검증되지 않으므로 화면이 방어선입니다.' },
   { title: '결함은 실측으로 확정한다', body: '가설이 아니라 실엔진 시험·브라우저 재현·고객 서버 측정으로 원인을 고정합니다. 전제가 뒤집히면 그 반전을 문서 제목에 남깁니다.' },
   { title: '경계 산출물을 단언한다', body: '테스트는 "전송된 SQL"과 "저장된 레코드"처럼 밖으로 나가는 것을 봅니다. 순수 계층이 초록인데 호출부에서 뚫리는 실패를 여섯 번 겪고 규칙으로 만들었습니다.' },

@@ -70,7 +70,7 @@ export function Contact() {
     <section className="contact wrap" id="contact" aria-labelledby="contact-h">
       <div className="contact__grid">
         <div>
-          <p className="lbl" data-reveal="">Sheet 05 — Contact</p>
+          <p className="lbl" data-reveal="">Sheet 06 — Contact</p>
           <h2 className="contact__title" id="contact-h" data-reveal="">숫자가 맞는 대시보드,<br />같이 만들죠.</h2>
           <div className="contact__links" data-reveal="">
             <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>

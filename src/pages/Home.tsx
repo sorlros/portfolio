@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
-import { CAPABILITIES, FLAGSHIPS, PATH, PRINCIPLES, PROFILE, STATS, WORKS, type WorkKind } from '../content';
+import { AI_FLOW, AI_STATS, CAPABILITIES, FLAGSHIPS, PATH, PRINCIPLES, PROFILE, STATS, WORKS, type WorkKind } from '../content';
 import { Link } from '../lib/router';
 import { Scrub, Split, useHeroIntro, useMeta, useReveals } from '../lib/motion';
 import { Contact, Nav } from '../components/Chrome';
-import { Fig } from '../components/Fig';
+import { Fig, FigAgents } from '../components/Fig';
 
 const KINDS: (WorkKind | '전체')[] = ['전체', 'BI', 'Systems', 'AI', 'Web'];
 const MARQ = ['1,114 merged PRs', '1,573 test files', '21 dashboard templates', '102 golden cases', '3 SQL dialects', '49 days uptime', '0.11MB login payload'];
@@ -111,8 +111,26 @@ export function Home() {
           </div>
         </section>
 
+        <section className="section wrap" id="agents" aria-labelledby="agents-h">
+          <div className="sh" data-reveal=""><span className="lbl" id="agents-h">Sheet 04 — Working with AI agents</span><p>구현과 교차검토는 에이전트에게, 결정과 검증은 직접</p></div>
+          <div className="agents">
+            <div data-reveal=""><FigAgents /></div>
+            <ol className="agents__flow" role="list">
+              {AI_FLOW.map((a) => (
+                <li key={a.step} className="agents__step" data-reveal="">
+                  <div className="agents__head"><span className="mono">{a.step}</span><b className={a.who === '나' ? 'agents__me' : ''}>{a.who}</b></div>
+                  <p>{a.body}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className="hero__stats" data-reveal="" style={{ marginTop: 28 }}>
+            {AI_STATS.map((s, i) => <div className="stat" key={s.label} data-n={`AI-${i + 1}`}><b className="num">{s.value}</b><span>{s.label}</span><small>{s.note}</small></div>)}
+          </div>
+        </section>
+
         <section className="section wrap" id="path" aria-labelledby="path-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="path-h">Sheet 04 — Path</span><p>회사 경력은 5개월, 코드는 5년</p></div>
+          <div className="sh" data-reveal=""><span className="lbl" id="path-h">Sheet 05 — Path</span><p>회사 경력은 5개월, 코드는 5년</p></div>
           <div className="path">
             {PATH.map((p) => <div className="path__row" key={p.when} data-reveal=""><span className="mono">{p.when}</span><b>{p.what}</b><p>{p.detail}</p></div>)}
           </div>
