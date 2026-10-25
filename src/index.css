@@ -351,3 +351,5 @@ code { font-family: var(--mono); font-size: .88em; color: var(--accent); }
 
 .case__body h3.sub { font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 26px 0 10px; font-weight: 500; }
 .case__body h3.sub:first-of-type { margin-top: 4px; }
+
+.contact__sub { margin-top: 14px; color: var(--fg-2); font-size: var(--lede); max-width: 40ch; }
