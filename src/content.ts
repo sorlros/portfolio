@@ -157,7 +157,7 @@ export const PATH: { when: string; what: string; detail: string }[] = [
   { when: '2026.06 — 현재', what: '비즈플러그 · 풀스택 개발자', detail: '기본 구조가 있던 GraeEye BI 편집기를 이어받아 전담 개선·확장. 서울시설공단 폐쇄망 설치(08) → 재배포(10).' },
   { when: '2026.01 — 05', what: '1인 개발 · AI 응용', detail: 'NovelAIne, Orbit Agent Web, ServerOps Simulator, Wall-E(팀장 · 아키텍처 · 영상 서버 · AI 추론 백엔드).' },
   { when: '2022 — 2024', what: '1인 개발 · 웹', detail: 'Vue 3 → React/Next.js. TypeScript 웹앱 20여 개 구현·배포.' },
-  { when: '2011 — 2018', what: '충북대학교 바이오시스템공학과', detail: '중퇴. GTQ 1급(2020), 웹디자인기능사(2011).' },
+  { when: '2011 — 2018', what: '충북대학교 바이오시스템공학과', detail: '중퇴. GTQ 1급·웹디자인기능사(2020).' },
 ];
 
 export const NAV = [
