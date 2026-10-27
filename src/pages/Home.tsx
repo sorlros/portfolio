@@ -4,6 +4,7 @@ import { Link } from '../lib/router';
 import { Scrub, Split, useHeroIntro, useMeta, useReveals } from '../lib/motion';
 import { Contact, Nav } from '../components/Chrome';
 import { Fig, FigAgents } from '../components/Fig';
+import { Clip } from '../components/Clip';
 
 const KINDS: (WorkKind | '전체')[] = ['전체', 'BI', 'Systems', 'AI', 'Web'];
 const MARQ = ['운영 DB 보호', '대시보드 자동 구성', '고객사 배포·장애 수리', 'SQL 안전 판정', '실측으로 확인', '기획부터 배포까지'];
@@ -55,10 +56,18 @@ export function Home() {
         </section>
 
         <section className="section wrap" id="product" aria-labelledby="product-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="product-h">제품 화면 <small>Sheet 00</small></span><p>제가 맡아 개선하는 BI 편집기의 실제 화면 · 데이터는 가상</p></div>
-          <div className="shots" data-reveal="">
-            <figure className="shot corner"><span className="fig__t">완성된 대시보드 (미리보기)</span><img src="/shots/graeeye-preview.png" alt="GraeEye 미리보기 화면: 따릉이 이용 현황 대시보드. 조회 기간·자치구 조건, KPI 4개, 일별 대여 건수·강수량 차트, 이용권 구성 도넛, 자치구별 대여 막대" loading="lazy" /><figcaption className="shot__cap">조회 조건을 고르면 KPI·차트·표가 함께 바뀝니다.</figcaption></figure>
-            <figure className="shot corner"><span className="fig__t">편집 화면</span><img src="/shots/graeeye-editor.png" alt="GraeEye 편집 화면: 왼쪽 화면 목록·데이터 소스, 가운데 캔버스, 오른쪽 페이지 설정 패널" loading="lazy" /><figcaption className="shot__cap">코드 없이 끌어다 놓아 화면을 만들고, DB 쿼리를 연결합니다.</figcaption></figure>
+          <div className="sh" data-reveal=""><span className="lbl" id="product-h">제품 화면 <small>Sheet 00</small></span><p>제가 맡아 개선하는 BI 편집기를 실제로 조작한 화면 · 데이터는 가상</p></div>
+          <div className="shots shots--clips" data-reveal="">
+            <figure className="shot corner">
+              <span className="fig__t">대시보드 구성 자동화</span>
+              <Clip name="graeeye-automation" label="GraeEye 대시보드 구성 자동화 시연: SQL 한 줄을 입력하고 대시보드 만들기를 누르면 추천 구성 카드가 뜨고, 하나를 고르면 제목·KPI·차트 2개·표가 한 번에 배치된 뒤 미리보기로 전환된다" />
+              <figcaption className="shot__cap">SQL 한 줄 → 「대시보드 만들기」 → 추천 구성 하나를 고르면 제목·KPI·차트·표가 한 번에 배치됩니다. <Link href="/work/automation">자세히 →</Link></figcaption>
+            </figure>
+            <figure className="shot corner">
+              <span className="fig__t">클릭해 나눠 보기 (자동 탐색)</span>
+              <Clip name="graeeye-explore" label="GraeEye 자동 탐색 시연: 9월 막대를 눌러 나눠 보기 후보 중 처리상태를 고르고, 다시 처리중 막대를 눌러 민원유형으로 나눈 뒤 처음 화면으로 돌아온다" />
+              <figcaption className="shot__cap">막대를 누르면 나눠 볼 기준이 조각 수와 함께 뜹니다. 계층을 미리 정하지 않아도 연달아 내려갈 수 있습니다. <Link href="/work/exploration">자세히 →</Link></figcaption>
+            </figure>
           </div>
         </section>
 

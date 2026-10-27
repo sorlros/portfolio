@@ -363,3 +363,8 @@ h2.lbl { font-weight: 500; }
 @media (max-width: 1000px) { .hero__stats--3 { grid-template-columns: 1fr; } .hero__stats--3 .stat { border-right: 0; border-bottom: 1px dashed var(--line-strong); } .hero__stats--3 .stat:last-child { border-bottom: 0; } }
 .row--static:hover::before { transform: scaleY(0); } .row--static:hover .row__name { transform: none; }
 .row__go { color: var(--accent); font-weight: 500; }
+.clip { width: 100%; height: auto; display: block; border-radius: 2px; background: #f1f5f9; }
+.shots--clips { grid-template-columns: 1fr; gap: clamp(1.6rem, 4vw, 3rem); }
+.shots--clips .shot:nth-child(2) .clip { max-width: 82%; margin: 0 auto; }
+.shot__cap a { color: var(--accent); white-space: nowrap; }
+@media (max-width: 1000px) { .shots--clips { grid-template-columns: 1fr; } }
