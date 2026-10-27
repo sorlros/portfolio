@@ -9,17 +9,15 @@ const Sources = ({ name }: { name: string }) => (
   </>
 );
 
-// 제품 시연 영상 — 카드 안에서는 소리 없이 반복 재생하고, 누르면 크게 보는 창으로 연다.
+// 제품 시연 영상 — 카드 안에서는 소리 없이 반복 재생하고, 누르면 크게 보는 창에서 처음부터 끝까지 한 번 재생한다.
 // 움직임 줄이기 설정이면 카드에서는 자동 재생하지 않는다(대표 이미지만 보이고, 크게 보기에서 재생 버튼).
 export function Clip({ name, label, title }: { name: string; label: string; title: string }) {
   const [open, setOpen] = useState(false);
-  const [startAt, setStartAt] = useState(0);
   const inline = useRef<HTMLVideoElement>(null);
   const opener = useRef<HTMLButtonElement>(null);
   const auto = !prefersReducedMotion;
 
   const show = () => {
-    setStartAt(inline.current?.currentTime ?? 0);
     inline.current?.pause();
     setOpen(true);
   };
@@ -40,12 +38,12 @@ export function Clip({ name, label, title }: { name: string; label: string; titl
           크게 보기
         </span>
       </button>
-      {open && createPortal(<Lightbox name={name} label={label} title={title} startAt={startAt} onClose={hide} />, document.body)}
+      {open && createPortal(<Lightbox name={name} label={label} title={title} onClose={hide} />, document.body)}
     </>
   );
 }
 
-function Lightbox({ name, label, title, startAt, onClose }: { name: string; label: string; title: string; startAt: number; onClose: () => void }) {
+function Lightbox({ name, label, title, onClose }: { name: string; label: string; title: string; onClose: () => void }) {
   const close = useRef<HTMLButtonElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   useEffect(() => {
@@ -58,9 +56,7 @@ function Lightbox({ name, label, title, startAt, onClose }: { name: string; labe
     return () => { removeEventListener('keydown', onKey); document.body.style.overflow = prev; startScroll(); };
   }, [onClose]);
   const onLoaded = () => {
-    const v = video.current; if (!v) return;
-    if (startAt > 0 && startAt < v.duration) v.currentTime = startAt;
-    if (!prefersReducedMotion) v.play().catch(() => {});
+    if (!prefersReducedMotion) video.current?.play().catch(() => {});
   };
   return (
     <div className="lightbox" role="dialog" aria-modal="true" aria-label={`${title} 영상`} onClick={onClose}>
@@ -69,7 +65,7 @@ function Lightbox({ name, label, title, startAt, onClose }: { name: string; labe
           <span className="fig__t lightbox__t">{title}</span>
           <button ref={close} type="button" className="lightbox__close" onClick={onClose} aria-label="닫기">닫기 ✕</button>
         </figcaption>
-        <video ref={video} className="lightbox__video" poster={`/videos/${name}-poster.jpg`} muted loop playsInline controls onLoadedMetadata={onLoaded} aria-label={label}>
+        <video ref={video} className="lightbox__video" poster={`/videos/${name}-poster.jpg`} muted playsInline controls onLoadedMetadata={onLoaded} aria-label={label}>
           <Sources name={name} />
         </video>
       </figure>
