@@ -1,7 +1,7 @@
 import { FLAGSHIPS } from '../../content';
 import { Block, CaseShell } from '../../components/CaseShell';
 import { ClassifierPlay } from '../../components/demos/ClassifierPlay';
-const f = FLAGSHIPS[1];
+const f = FLAGSHIPS.find((x) => x.slug === 'sql-classifier')!;
 export function SqlClassifier() {
   return (
     <CaseShell f={f}>

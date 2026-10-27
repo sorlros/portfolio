@@ -17,14 +17,14 @@ export function CaseShell({ f, children }: { f: Flagship; children: ReactNode })
       <main id="main">
         <section className="case__hero" aria-labelledby="case-h" data-index={f.index}>
           <div className="wrap">
-            <p className="lbl" data-hero-fade="">Plate {f.index} — {f.kicker}</p>
+            <p className="lbl" data-hero-fade="">작업 {f.index} — {f.kicker}</p>
             <h1 id="case-h"><span data-hero-line=""><span>{f.name}</span></span></h1>
             <p className="tag" data-hero-fade="">{f.tagline}</p>
             <div className="case__facts" data-hero-fade="">
               <div><b>역할</b><span>{f.role}</span></div>
               <div><b>기간</b><span>{f.period}</span></div>
               <div><b>스택</b><span>{f.stack.join(' · ')}</span></div>
-              <div><b>근거</b><span>{f.evidence.slice(0, 3).join(' · ')}</span></div>
+              <div><b>근거</b><span>{f.evidence.filter((e) => !e.startsWith('PR')).join(' · ')} 외 PR 기록</span></div>
             </div>
           </div>
         </section>
@@ -36,7 +36,7 @@ export function CaseShell({ f, children }: { f: Flagship; children: ReactNode })
         {children}
         <section className="wrap">
           <div className="next" data-reveal="">
-            <span className="lbl">Next plate</span>
+            <span className="lbl">다음 작업</span>
             <Link href={next.path} label={next.name} color={next.accent} data-cursor="Open"><span className="mono" style={{ fontSize: "1rem" }}>{next.index}</span> <span>{next.name}</span> →</Link>
           </div>
         </section>

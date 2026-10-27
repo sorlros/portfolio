@@ -8,7 +8,7 @@ export function NotFound() {
   useHeroIntro(scope);
   return (
     <div ref={scope}><Nav /><main id="main" className="nf wrap">
-      <h1><span data-hero-line=""><span>Sheet</span></span><span data-hero-line=""><span><em>not found.</em></span></span></h1>
+      <h1><span data-hero-line=""><span>없는</span></span><span data-hero-line=""><span><em>페이지입니다.</em></span></span></h1>
       <p data-hero-fade="">404 — 이 주소에는 도면이 없습니다. 숫자가 틀린 건 아니고, 페이지가 없는 겁니다.</p>
       <p data-hero-fade="" style={{ marginTop: 26 }}><Link href="/" className="pill pill--solid">처음으로</Link></p>
     </main></div>

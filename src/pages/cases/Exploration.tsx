@@ -1,7 +1,7 @@
 import { FLAGSHIPS } from '../../content';
 import { Block, CaseShell } from '../../components/CaseShell';
 import { ExploreDemo } from '../../components/demos/ExploreDemo';
-const f = FLAGSHIPS[2];
+const f = FLAGSHIPS.find((x) => x.slug === 'exploration')!;
 export function Exploration() {
   return (
     <CaseShell f={f}>
