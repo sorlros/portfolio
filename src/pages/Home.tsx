@@ -101,7 +101,7 @@ export function Home() {
             </div>
           </div>
           <div style={{ marginTop: 'clamp(2.5rem, 6vw, 5rem)' }}>
-            <Split as="h3" className="display" text="면접에서 설명할 수 있는 것만 적었습니다." />
+            <Split as="h3" className="display" text="직접 설계하고 구현한 기술만 적었습니다." />
             <div className="caps" style={{ marginTop: 22 }}>
               {CAPABILITIES.map((c) => (
                 <div className="cap" key={c.title} data-reveal=""><h3>{c.title}</h3><ul role="list">{c.items.map((i) => <li key={i}>{i}</li>)}</ul></div>
