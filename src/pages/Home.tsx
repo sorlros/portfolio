@@ -6,7 +6,7 @@ import { Contact, Nav } from '../components/Chrome';
 import { Fig, FigAgents } from '../components/Fig';
 
 const KINDS: (WorkKind | '전체')[] = ['전체', 'BI', 'Systems', 'AI', 'Web'];
-const MARQ = ['운영 DB 보호', '대시보드 자동 구성', '공공기관 폐쇄망 배포', 'SQL 안전 판정', '실측으로 확인', '기획부터 배포까지'];
+const MARQ = ['운영 DB 보호', '대시보드 자동 구성', '고객사 배포·장애 수리', 'SQL 안전 판정', '실측으로 확인', '기획부터 배포까지'];
 
 export function Home() {
   const scope = useRef<HTMLDivElement>(null);

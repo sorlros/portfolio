@@ -12,7 +12,7 @@ export const PROFILE = {
   career: '/career.pdf',
   availability: '재직 중 · 이직 검토',
   positioning: '운영 DB를 지키면서 빠르게 보여주는 BI를, 기획부터 배포까지 만듭니다.',
-  lede: '기본 구조가 잡혀 있던 셀프서비스 BI 편집기 GraeEye를 이어받아 전담으로 개선·확장하고, 공공기관 폐쇄망 서버에 설치·운영하고 있습니다. 숫자가 맞는지는 가설이 아니라 실측으로 확인합니다.',
+  lede: '기본 구조가 잡혀 있던 셀프서비스 BI 편집기 GraeEye를 이어받아 전담으로 개선·확장하고, 공공기관 고객사(서울시설공단) 서버에 설치·운영하고 있습니다. 숫자가 맞는지는 가설이 아니라 실측으로 확인합니다.',
   statement:
     '대시보드는 숫자가 틀리면 존재 이유가 없습니다. 그래서 저는 "필터를 걸었는데 숫자가 다르다"는 신고 하나를 4종 DB 실측으로 끝까지 추적하고, 조회가 운영 DB를 해치지 않도록 상한과 취소 경로를 먼저 만듭니다. 무엇을 만들지도 직접 정합니다. 비개발자가 몇 번의 조작으로 믿을 수 있는 대시보드에 도달하는지를 중심 질문으로 두고, 결정은 결정표와 목업으로 남깁니다. 5개월간 머지한 PR 1,114건은 전부 문제·접근·검증·남은 위험을 적은 본문과 함께 남아 있습니다.',
 };
@@ -106,18 +106,18 @@ export const FLAGSHIPS: Flagship[] = [
   },
   {
     slug: 'offline-deploy', path: '/work/offline-deploy', index: '05',
-    name: '폐쇄망 오프라인 배포',
-    kicker: '인터넷 없는 공공기관 서버에 설치·운영',
-    tagline: '인터넷이 없는 공공기관 서버에 원격으로 설치하고, 저속 회선에서 부팅조차 못 하던 설치본을 30.2MB → 0.11MB로 줄였습니다.',
-    summary: '고객은 인터넷·USB 반입이 제한된 폐쇄망이고 설치자는 비개발자일 수 있습니다. 시스템 DB를 임베디드 PGlite로 두고, 시크릿 생성부터 접속 확인까지 자동인 설치 스크립트와 TLS·systemd 스크립트를 만들었습니다. 재배포 전 실측에서 고객 회선이 2.7~3.0MB 지점마다 끊기는 것을 보고 사전압축·난독화 범위 축소·로그인 화면 분리로 수리했습니다.',
-    role: '패키징 · 설치 스크립트 · 원격 설치 · 재배포',
+    name: '고객사 배포와 운영 장애 수리',
+    kicker: '서울시설공단 · 설치부터 재배포까지',
+    tagline: '공단 직원 PC에서 열리지 않던 앱을 접속 로그로 진단해, 첫 화면 전송량을 30.2MB에서 0.11MB로 줄였습니다.',
+    summary: '첫 고객 서울시설공단 서버에 2026년 8월 SSH로 원격 설치했습니다. 10월에 공단 직원 PC에서 앱이 열리지 않고, 한 명이 로그아웃하면 같은 계정을 쓰는 모두가 튕기는 문제가 들어왔습니다. 접속 로그로 원인을 찾아 사전압축·로그인 화면 분리·토큰-세션 결속으로 고치고, 고객 데이터 사본에서 리허설한 뒤 재배포했습니다.',
+    role: '장애 진단 · 수리 · 설치 패키지 · 원격 설치·재배포',
     period: '2026.07 ~ 10',
     stack: ['Rocky Linux', 'Apache', 'systemd', 'Vite', 'PGlite', 'Brotli/gzip', 'Shell'],
     metrics: [
       { value: '30.2MB → 0.11MB', label: '로그인 화면까지 내려받는 용량 (압축 기준)' },
-      { value: '2개', label: '설치를 끝내는 데 실행할 스크립트' },
+      { value: '전원 → 본인', label: '로그아웃할 때 끊기는 세션 (공용 계정)' },
       { value: '2회', label: '원격 설치(2026.08)와 업데이트 재배포(2026.10)' },
-      { value: '2건', label: '설치 리허설에서 미리 찾아 고친 결함' },
+      { value: '2건', label: '재배포 리허설(고객 데이터 사본)에서 미리 고친 결함' },
     ],
     accent: '#FFB347', bg: '#070D1A', fg: '#EAF0FF',
     evidence: ['PR #1', 'PR #894', 'PR #895', 'PR #899', 'PR #896', '작업기록 · 서울시설공단 다중 접속 안정화 재배포 (2026.10.08)'],
@@ -147,14 +147,14 @@ export const CAPABILITIES: { title: string; items: string[] }[] = [
   { title: '데이터 조회·시각화', items: ['MySQL/MariaDB · PostgreSQL · Oracle 방언별 SQL 조립', '서버 사이드 피벗 · 합계/필터 정합', 'ECharts 6 차트 27종 매핑 · 지표 매트릭스', 'xlsx/PNG 내보내기 · WebSocket 실시간 수신'] },
   { title: '운영 DB 보호·성능', items: ['용도별 행/바이트 상한', '방언별 실행 시간 상한', '요청 끊김 시 쿼리 취소', '동시 부하 실측으로 기본값 도출'] },
   { title: '보안·권한', items: ['SQL 인젝션 전수조사 · AST 허용목록', '렉서 기반 SQL 쓰기 판정', 'JWT 세션 결속 · OAuth2/OIDC · SAML', '5단계 RBAC · 연결 소유권(IDOR) 차단'] },
-  { title: '배포·운영', items: ['폐쇄망 오프라인 패키지 · 원클릭 설치', 'Apache TLS · systemd · 사전압축', '임베디드 PGlite ↔ PostgreSQL 전환', 'Rocky/Ubuntu 원격 설치·재배포'] },
+  { title: '배포·운영', items: ['의존성 동봉 오프라인 설치 패키지', 'Apache TLS · systemd · 사전압축', '임베디드 PGlite ↔ PostgreSQL 전환', '접속 로그로 장애 진단 · 데이터 보존 재배포'] },
   { title: 'AI 에이전트 운용', items: ['구현(Claude Code) · 교차검토(Codex) 분리 운용', '8개 절 고정 검토 의뢰서 · 지적 재현 후 판정', '계획/구현 모델 분리 · 작업 라우팅 훅 자작', '세션 간 메모리 · 작업기록으로 맥락 인계'] },
   { title: '품질 방법론', items: ['TDD · red-first · 뮤턴트 사망 확인', 'Docker 실DB 통합 · HTTP 경계 시험', 'Playwright E2E · 골든셋/블라인드 하네스', 'PR 5요소 · 작업기록 362편 · ADR'] },
   { title: 'AI 응용', items: ['RAG(ChromaDB · pgvector) 문서 QA', 'LLM 게이트웨이(OpenAI · Claude · Ollama)', 'NL→SQL(DB 능력 탐침 → 제약 프롬프트)', 'LangGraph 멀티에이전트'] },
 ];
 
 export const PATH: { when: string; what: string; detail: string }[] = [
-  { when: '2026.06 — 현재', what: '비즈플러그 · 풀스택 개발자', detail: '기본 구조가 있던 GraeEye BI 편집기를 이어받아 전담 개선·확장. 서울시설공단 폐쇄망 설치(08) → 재배포(10).' },
+  { when: '2026.06 — 현재', what: '비즈플러그 · 풀스택 개발자', detail: '기본 구조가 있던 GraeEye BI 편집기를 이어받아 전담 개선·확장. 서울시설공단 서버 원격 설치(08) → 장애 수리 후 재배포(10).' },
   { when: '2026.01 — 05', what: '1인 개발 · AI 응용', detail: 'NovelAIne, Orbit Agent Web, ServerOps Simulator, Wall-E(팀장 · 아키텍처 · 영상 서버 · AI 추론 백엔드).' },
   { when: '2022 — 2024', what: '1인 개발 · 웹', detail: 'Vue 3 → React/Next.js. TypeScript 웹앱 20여 개 구현·배포.' },
   { when: '2011 — 2018', what: '충북대학교 바이오시스템공학과', detail: '중퇴. GTQ 1급·웹디자인기능사(2020).' },
