@@ -359,3 +359,5 @@ h2.lbl { font-weight: 500; }
 .lbl small { font-size: inherit; color: var(--muted); margin-left: 10px; letter-spacing: .14em; }
 .hero__title--ko { font-size: clamp(3rem, 7vw, 7rem); line-height: 1.04; letter-spacing: -.04em; }
 .nf h1 { letter-spacing: -.04em; line-height: 1.04; }
+.hero__stats--3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1000px) { .hero__stats--3 { grid-template-columns: 1fr; } .hero__stats--3 .stat { border-right: 0; border-bottom: 1px dashed var(--line-strong); } .hero__stats--3 .stat:last-child { border-bottom: 0; } }

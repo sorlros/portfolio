@@ -6,7 +6,7 @@ import { Contact, Nav } from '../components/Chrome';
 import { Fig, FigAgents } from '../components/Fig';
 
 const KINDS: (WorkKind | '전체')[] = ['전체', 'BI', 'Systems', 'AI', 'Web'];
-const MARQ = ['1,114 merged PRs', '1,573 test files', '21 dashboard templates', '102 golden cases', '3 SQL dialects', '49 days uptime', '0.11MB login payload'];
+const MARQ = ['운영 DB 보호', '대시보드 자동 구성', '공공기관 폐쇄망 배포', 'SQL 안전 판정', '실측으로 확인', '기획부터 배포까지'];
 
 export function Home() {
   const scope = useRef<HTMLDivElement>(null);
@@ -49,7 +49,7 @@ export function Home() {
         </div>
 
         <section className="wrap" aria-label="핵심 수치">
-          <div className="hero__stats" data-reveal="">
+          <div className="hero__stats hero__stats--3" data-reveal="">
             {STATS.map((s, i) => <div className="stat" key={s.label} data-n={`A-${i + 1}`}><b className="num">{s.value}</b><span>{s.label}</span><small>{s.note}</small></div>)}
           </div>
         </section>

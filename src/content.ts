@@ -20,10 +20,9 @@ export const PROFILE = {
 export type Metric = { value: string; label: string; note?: string };
 
 export const STATS: Metric[] = [
-  { value: '1,114', label: '머지된 PR', note: '2026.07 ~ 10, 전부 단독 작성' },
-  { value: '1,573', label: '테스트 파일', note: '단위 · HTTP 경계 · 실DB 통합 + E2E 16' },
-  { value: '102', label: '골든셋 케이스', note: '추천 품질 측정 · 초기 51 → 102 · 템플릿 21종' },
-  { value: '49', label: '일 무중단 가동', note: '서울시설공단 폐쇄망 v0.5.0' },
+  { value: '1,114', label: '머지된 PR (2026.07 ~ 10)', note: '결정·검증은 직접, 구현은 AI 에이전트와 함께' },
+  { value: '1,573', label: '테스트 파일', note: '단위 · 실제 DB 통합 · 화면 E2E' },
+  { value: '102', label: '추천 품질을 재는 정답 문제', note: '대시보드 구성 추천의 골든셋' },
 ];
 
 export type Flagship = {
@@ -117,7 +116,7 @@ export const FLAGSHIPS: Flagship[] = [
     metrics: [
       { value: '30.2MB → 0.11MB', label: '로그인 화면까지 내려받는 용량 (압축 기준)' },
       { value: '2개', label: '설치를 끝내는 데 실행할 스크립트' },
-      { value: '49일', label: '첫 설치 후 무중단 가동' },
+      { value: '2회', label: '원격 설치(2026.08)와 업데이트 재배포(2026.10)' },
       { value: '2건', label: '설치 리허설에서 미리 찾아 고친 결함' },
     ],
     accent: '#FFB347', bg: '#070D1A', fg: '#EAF0FF',
