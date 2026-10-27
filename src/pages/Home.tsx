@@ -150,7 +150,7 @@ export function Home() {
         </section>
 
         <section className="section wrap" id="path" aria-labelledby="path-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="path-h">걸어온 길 <small>Sheet 05</small></span><p>회사 경력은 5개월, 코드는 5년</p></div>
+          <div className="sh" data-reveal=""><span className="lbl" id="path-h">이력 <small>Sheet 05</small></span><p>회사 경력은 5개월, 코드는 5년</p></div>
           <div className="path">
             {PATH.map((p) => <div className="path__row" key={p.when} data-reveal=""><span className="mono">{p.when}</span><b>{p.what}</b><p>{p.detail}</p></div>)}
           </div>
