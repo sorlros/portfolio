@@ -1,7 +1,7 @@
 import { FLAGSHIPS } from '../../content';
 import { Block, CaseShell } from '../../components/CaseShell';
 import { RoleClassifierDemo } from '../../components/demos/RoleClassifierDemo';
-const f = FLAGSHIPS[0];
+const f = FLAGSHIPS.find((x) => x.slug === 'automation')!;
 export function Automation() {
   return (
     <CaseShell f={f}>

@@ -1,7 +1,7 @@
 import { FLAGSHIPS } from '../../content';
 import { Block, CaseShell } from '../../components/CaseShell';
 import { DeployTimeline } from '../../components/demos/DeployTimeline';
-const f = FLAGSHIPS[3];
+const f = FLAGSHIPS.find((x) => x.slug === 'offline-deploy')!;
 export function OfflineDeploy() {
   return (
     <CaseShell f={f}>

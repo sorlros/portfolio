@@ -1,7 +1,7 @@
 import { FLAGSHIPS } from '../../content';
 import { Block, CaseShell } from '../../components/CaseShell';
 import { GateCalc } from '../../components/demos/GateCalc';
-const f = FLAGSHIPS[0];
+const f = FLAGSHIPS.find((x) => x.slug === 'query-gate')!;
 export function QueryGate() {
   return (
     <CaseShell f={f}>
