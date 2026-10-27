@@ -84,20 +84,23 @@ export function Home() {
         </section>
 
         <section className="section wrap" aria-labelledby="index-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="index-h">그 밖의 작업 <small>Sheet 02</small></span><p>GraeEye의 다른 묶음과 회사 경력 전 1인 개발 프로젝트</p></div>
+          <div className="sh" data-reveal=""><span className="lbl" id="index-h">그 밖의 작업 <small>Sheet 02</small></span><p>GraeEye의 다른 작업 묶음과 회사 경력 전 1인 개발 프로젝트 · ↗ 표시는 GitHub 저장소로 연결</p></div>
           <div className="filters" role="group" aria-label="종류 필터" data-reveal="">
             {KINDS.map((k) => <button key={k} aria-pressed={kind === k} onClick={() => setKind(k)}>{k}</button>)}
           </div>
           <div role="list">
-            {works.map((w, i) => (
-              <a key={w.name} href={w.href} target="_blank" rel="noopener noreferrer" className="row" role="listitem" data-reveal="">
+            {works.map((w, i) => {
+              const cells = (<>
                 <span className="row__n">{String(i + 1).padStart(2, '0')}</span>
-                <span className="row__name">{w.name}</span>
+                <span className="row__name">{w.name}{w.href && <span className="row__go" aria-hidden="true"> ↗</span>}</span>
                 <span className="row__blurb">{w.blurb}</span>
                 <span className="row__stack">{w.stack.join(' · ')}</span>
                 <span className="row__year">{w.year}</span>
-              </a>
-            ))}
+              </>);
+              return w.href
+                ? <a key={w.name} href={w.href} target="_blank" rel="noopener noreferrer" className="row" role="listitem" data-reveal="">{cells}</a>
+                : <div key={w.name} className="row row--static" role="listitem" data-reveal="">{cells}</div>;
+            })}
           </div>
         </section>
 

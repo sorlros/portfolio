@@ -48,7 +48,7 @@ export const FLAGSHIPS: Flagship[] = [
       { value: '2,294', label: '점수 가중치 조합을 전부 채점해 현재 값 검증' },
     ],
     accent: '#B98CFF', bg: '#070D1A', fg: '#EAF0FF',
-    evidence: ['PR #20', 'PR #21', 'PR #123', 'PR #1178~#1183', 'BI_실사용성검토_수도인구차트_2026-08-05', '차원칸_표시만_설계_2026-10-20'],
+    evidence: ['PR #20', 'PR #21', 'PR #123', 'PR #1178~#1183', '작업기록 · 실사용성 검토: 수도 인구 차트 재현 (2026.08.05)', '작업기록 · 차원 칸 표시 정책 설계 (2026.10.20)'],
   },
   {
     slug: 'query-gate', path: '/work/query-gate', index: '02',
@@ -66,7 +66,7 @@ export const FLAGSHIPS: Flagship[] = [
       { value: '15 / 15', label: '실제 DB 3종(PostgreSQL·MySQL·Oracle) 상한 시험 통과' },
     ],
     accent: '#FF6B4A', bg: '#070D1A', fg: '#EAF0FF',
-    evidence: ['PR #1013', 'PR #1047', 'PR #1051', 'PR #1126', '시설공단_시간제한_실측_2026-10-16'],
+    evidence: ['PR #1013', 'PR #1047', 'PR #1051', 'PR #1126', '작업기록 · 시설공단 서버 시간 상한 실측 (2026.10.16)'],
   },
   {
     slug: 'sql-classifier', path: '/work/sql-classifier', index: '03',
@@ -84,7 +84,7 @@ export const FLAGSHIPS: Flagship[] = [
       { value: '0건', label: '독립 보안 검토 2회 뒤 남은 최고 위험(P0) 결함' },
     ],
     accent: '#5EE7FF', bg: '#070D1A', fg: '#EAF0FF',
-    evidence: ['PR #871', 'PR #943', 'PR #944', 'PR #945', 'PR #952', 'SQL인젝션_전수조사_2026-10-02'],
+    evidence: ['PR #871', 'PR #943', 'PR #944', 'PR #945', 'PR #952', '작업기록 · SQL 인젝션 전수조사 (2026.10.02)'],
   },
   {
     slug: 'exploration', path: '/work/exploration', index: '04',
@@ -102,7 +102,7 @@ export const FLAGSHIPS: Flagship[] = [
       { value: '12차', label: '독립 검토와 수정을 주고받은 횟수' },
     ],
     accent: '#D8FF3D', bg: '#070D1A', fg: '#EAF0FF',
-    evidence: ['PR #647', '차트그리드-자동탐색-계획-확정본_2026-09-08', '탐색_범위원칙_개정_2026-09-18'],
+    evidence: ['PR #647', '작업기록 · 자동 탐색 계획 확정본 (2026.09.08)', '작업기록 · 탐색 범위 원칙 개정 (2026.09.18)'],
   },
   {
     slug: 'offline-deploy', path: '/work/offline-deploy', index: '05',
@@ -120,21 +120,21 @@ export const FLAGSHIPS: Flagship[] = [
       { value: '2건', label: '설치 리허설에서 미리 찾아 고친 결함' },
     ],
     accent: '#FFB347', bg: '#070D1A', fg: '#EAF0FF',
-    evidence: ['PR #1', 'PR #894', 'PR #895', 'PR #899', 'PR #896', '서울시설공단_HTTP접속_다중접속_안정화_재배포_2026-10-08'],
+    evidence: ['PR #1', 'PR #894', 'PR #895', 'PR #899', 'PR #896', '작업기록 · 서울시설공단 다중 접속 안정화 재배포 (2026.10.08)'],
   },
 ];
 
 export type WorkKind = 'BI' | 'AI' | 'Web' | 'Systems';
-export const WORKS: { name: string; blurb: string; stack: string[]; kind: WorkKind; year: string; href: string; route?: string }[] = [
-  { name: '차트 우클릭 3계층 · 퀵메뉴', blurb: '세부 옵션을 패널에 전부 넣으면 비대해진다는 우려를 목업 검토로 풀어 잔류 원클릭 / 인라인 팝오버 / 패널 딥링크 3계층으로 재배치. 설정 탭 5 → 2, 퀵메뉴 peek+drag 14 PR.', stack: ['UX', 'React', '목업'], kind: 'BI', year: '2026', href: 'https://github.com/sorlros' },
-  { name: '탐색 제안 팝오버 · 드릴 3종 UX', blurb: '호버 → 클릭 버튼 전환 결정, 근거(조각 수) 표시·막힌 후보 사유·자동 실행 없음. "순위 품질은 정량 검증되지 않으므로 화면이 방어선". 드릴 링크 화살표 오버레이.', stack: ['UX', 'React'], kind: 'BI', year: '2026', href: 'https://github.com/sorlros' },
-  { name: '지표 타일 · 조회조건 칩 · 입력 검증 인라인', blurb: '"데이터는 KPI 엔진, 표시는 패널+요소" 결정표 8항목으로 지표 타일을 1분 안에. 조회 버튼 = 그 입력을 읽는 위젯 전부, 칩은 조회에 쓴 값. submit 없는 앱의 유일한 검증 시점을 조회 게이트로.', stack: ['UX', '결정표'], kind: 'BI', year: '2026', href: 'https://github.com/sorlros' },
-  { name: '사용자 메뉴얼 36개 · 쉬운 설명 HTML', blurb: '초보자 기준 기능별 메뉴얼(md+html) 36개, 결정 라운드마다 비개발자용 "쉬운 설명" HTML 7편, 목업·시안 22편, 결정 비교 18편.', stack: ['문서', 'HTML'], kind: 'BI', year: '2026', href: 'https://github.com/sorlros' },
-  { name: '다중 DB 방언 단일 조립 엔진', blurb: '중복된 SQL 조립 경로 2벌을 순수 함수 엔진 + 방언 데이터 테이블로 단일화. 타입 인지 리터럴로 Oracle 날짜·boolean 무음 오답 제거, 무배선 코드 3,079줄 삭제.', stack: ['TypeScript', 'SQL'], kind: 'BI', year: '2026', href: 'https://github.com/sorlros' },
-  { name: '그리드 합계·서버 사이드 피벗·DB 대조', blurb: '합계 집계 축을 화면 표시 행 하나로 통일, DISTINCT → CASE WHEN 자동 피벗 + 4계층 정합성 검증, 실행 SQL을 감싼 집계 1회로 DB와 대조.', stack: ['React', 'SQL', 'BigInt'], kind: 'BI', year: '2026', href: 'https://github.com/sorlros' },
-  { name: '차트 겹침 근본 원인과 SSR 검증 하네스', blurb: 'ECharts 6의 deprecated containLabel이 축 이름 회피를 끄는 것을 추적, 옵션을 실제 렌더해 텍스트 좌표로 겹침을 판정하는 하네스로 54조합 회귀 증명.', stack: ['ECharts 6', 'SSR'], kind: 'BI', year: '2026', href: 'https://github.com/sorlros' },
-  { name: '다중 사용자 협업 모델', blurb: '화면 단위 버전, presence 하트비트 동시편집 경고(고객 서버 CPU 실측 근거), 화면별 공개/비공개, 연결 소프트 삭제/대체. ADR 3편, 스택 PR 30여 건.', stack: ['Express', 'PostgreSQL', 'ADR'], kind: 'Systems', year: '2026', href: 'https://github.com/sorlros' },
-  { name: '서버 DB 분기 71곳 해소·HTTP 시험 하네스', blurb: '풀 미사용·풀 파괴 등 결함 15건 확정, 골든 계약 하네스로 응답 고정 후 어댑터 계층 이행. 다른 워크트리 서버를 상대로 돌던 시험 플레이크 수리.', stack: ['Node.js', 'node:test', 'CI'], kind: 'Systems', year: '2026', href: 'https://github.com/sorlros' },
+export const WORKS: { name: string; blurb: string; stack: string[]; kind: WorkKind; year: string; href?: string; route?: string }[] = [
+  { name: '차트 우클릭 3계층 · 퀵메뉴', blurb: '세부 옵션을 패널에 전부 넣으면 비대해진다는 우려를 목업 검토로 풀어 잔류 원클릭 / 인라인 팝오버 / 패널 딥링크 3계층으로 재배치. 설정 탭 5 → 2, 퀵메뉴 peek+drag 14 PR.', stack: ['UX', 'React', '목업'], kind: 'BI', year: '2026' },
+  { name: '탐색 제안 팝오버 · 드릴 3종 UX', blurb: '호버 → 클릭 버튼 전환 결정, 근거(조각 수) 표시·막힌 후보 사유·자동 실행 없음. "순위 품질은 정량 검증되지 않으므로 화면이 방어선". 드릴 링크 화살표 오버레이.', stack: ['UX', 'React'], kind: 'BI', year: '2026' },
+  { name: '지표 타일 · 조회조건 칩 · 입력 검증 인라인', blurb: '"데이터는 KPI 엔진, 표시는 패널+요소" 결정표 8항목으로 지표 타일을 1분 안에. 조회 버튼 = 그 입력을 읽는 위젯 전부, 칩은 조회에 쓴 값. submit 없는 앱의 유일한 검증 시점을 조회 게이트로.', stack: ['UX', '결정표'], kind: 'BI', year: '2026' },
+  { name: '사용자 메뉴얼 36개 · 쉬운 설명 HTML', blurb: '초보자 기준 기능별 메뉴얼(md+html) 36개, 결정 라운드마다 비개발자용 "쉬운 설명" HTML 7편, 목업·시안 22편, 결정 비교 18편.', stack: ['문서', 'HTML'], kind: 'BI', year: '2026' },
+  { name: '다중 DB 방언 단일 조립 엔진', blurb: '중복된 SQL 조립 경로 2벌을 순수 함수 엔진 + 방언 데이터 테이블로 단일화. 타입 인지 리터럴로 Oracle 날짜·boolean 무음 오답 제거, 무배선 코드 3,079줄 삭제.', stack: ['TypeScript', 'SQL'], kind: 'BI', year: '2026' },
+  { name: '그리드 합계·서버 사이드 피벗·DB 대조', blurb: '합계 집계 축을 화면 표시 행 하나로 통일, DISTINCT → CASE WHEN 자동 피벗 + 4계층 정합성 검증, 실행 SQL을 감싼 집계 1회로 DB와 대조.', stack: ['React', 'SQL', 'BigInt'], kind: 'BI', year: '2026' },
+  { name: '차트 겹침 근본 원인과 SSR 검증 하네스', blurb: 'ECharts 6의 deprecated containLabel이 축 이름 회피를 끄는 것을 추적, 옵션을 실제 렌더해 텍스트 좌표로 겹침을 판정하는 하네스로 54조합 회귀 증명.', stack: ['ECharts 6', 'SSR'], kind: 'BI', year: '2026' },
+  { name: '다중 사용자 협업 모델', blurb: '화면 단위 버전, presence 하트비트 동시편집 경고(고객 서버 CPU 실측 근거), 화면별 공개/비공개, 연결 소프트 삭제/대체. ADR 3편, 스택 PR 30여 건.', stack: ['Express', 'PostgreSQL', 'ADR'], kind: 'Systems', year: '2026' },
+  { name: '서버 DB 분기 71곳 해소·HTTP 시험 하네스', blurb: '풀 미사용·풀 파괴 등 결함 15건 확정, 골든 계약 하네스로 응답 고정 후 어댑터 계층 이행. 다른 워크트리 서버를 상대로 돌던 시험 플레이크 수리.', stack: ['Node.js', 'node:test', 'CI'], kind: 'Systems', year: '2026' },
   { name: 'NovelAIne', blurb: 'AI 대화형 소설·자동 삽화. pgvector RAG 선택적 기억 + Summary Buffer로 긴 서사의 설정 오류·토큰 낭비 감소, 중요도 점수 임계치에서만 삽화 생성.', stack: ['Flutter', 'FastAPI', 'Supabase'], kind: 'AI', year: '2026', href: 'https://github.com/sorlros/NovelAIne' },
   { name: 'Orbit Agent Web', blurb: 'LangGraph 멀티에이전트(Manager·Backend·Frontend·QA·Reporter) 오케스트레이터의 웹 클라이언트. pgvector RAG로 과거 맥락 주입, 백그라운드 요약.', stack: ['React', 'Vite', 'LangGraph'], kind: 'AI', year: '2026', href: 'https://github.com/sorlros/multi-agent-bot-web' },
   { name: 'ServerOps Simulator', blurb: '웹 터미널에서 디스크 부족·OOM·Nginx 502·커넥션 풀 고갈·배포 롤백 6개 장애를 상태머신으로 재현하는 운영 학습 도구. DDD/TDD 구조.', stack: ['Next.js', 'TypeScript'], kind: 'Web', year: '2026', href: 'https://github.com/sorlros/server-ops-sim' },

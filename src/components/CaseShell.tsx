@@ -24,7 +24,7 @@ export function CaseShell({ f, children }: { f: Flagship; children: ReactNode })
               <div><b>역할</b><span>{f.role}</span></div>
               <div><b>기간</b><span>{f.period}</span></div>
               <div><b>스택</b><span>{f.stack.join(' · ')}</span></div>
-              <div><b>근거</b><span>{f.evidence.slice(0, 3).join(' · ')}</span></div>
+              <div><b>근거</b><span>{f.evidence.filter((e) => !e.startsWith('PR')).join(' · ')} 외 PR 기록</span></div>
             </div>
           </div>
         </section>

@@ -361,3 +361,5 @@ h2.lbl { font-weight: 500; }
 .nf h1 { letter-spacing: -.04em; line-height: 1.04; }
 .hero__stats--3 { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 1000px) { .hero__stats--3 { grid-template-columns: 1fr; } .hero__stats--3 .stat { border-right: 0; border-bottom: 1px dashed var(--line-strong); } .hero__stats--3 .stat:last-child { border-bottom: 0; } }
+.row--static:hover::before { transform: scaleY(0); } .row--static:hover .row__name { transform: none; }
+.row__go { color: var(--accent); font-weight: 500; }
