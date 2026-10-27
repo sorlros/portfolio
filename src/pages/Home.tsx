@@ -60,12 +60,12 @@ export function Home() {
           <div className="shots shots--clips" data-reveal="">
             <figure className="shot corner">
               <span className="fig__t">대시보드 구성 자동화</span>
-              <Clip name="graeeye-automation" label="GraeEye 대시보드 구성 자동화 시연: SQL 한 줄을 입력하고 대시보드 만들기를 누르면 추천 구성 카드가 뜨고, 하나를 고르면 제목·KPI·차트 2개·표가 한 번에 배치된 뒤 미리보기로 전환된다" />
+              <Clip name="graeeye-automation" title="대시보드 구성 자동화" label="GraeEye 대시보드 구성 자동화 시연: SQL 한 줄을 입력하고 대시보드 만들기를 누르면 추천 구성 카드가 뜨고, 하나를 고르면 제목·KPI·차트 2개·표가 한 번에 배치된 뒤 미리보기로 전환된다" />
               <figcaption className="shot__cap">SQL 한 줄 → 「대시보드 만들기」 → 추천 구성 하나를 고르면 제목·KPI·차트·표가 한 번에 배치됩니다. <Link href="/work/automation">자세히 →</Link></figcaption>
             </figure>
             <figure className="shot corner">
               <span className="fig__t">클릭해 나눠 보기 (자동 탐색)</span>
-              <Clip name="graeeye-explore" label="GraeEye 자동 탐색 시연: 9월 막대를 눌러 나눠 보기 후보 중 처리상태를 고르고, 다시 처리중 막대를 눌러 민원유형으로 나눈 뒤 처음 화면으로 돌아온다" />
+              <Clip name="graeeye-explore" title="클릭해 나눠 보기 (자동 탐색)" label="GraeEye 자동 탐색 시연: 9월 막대를 눌러 나눠 보기 후보 중 처리상태를 고르고, 다시 처리중 막대를 눌러 민원유형으로 나눈 뒤 처음 화면으로 돌아온다" />
               <figcaption className="shot__cap">막대를 누르면 나눠 볼 기준이 조각 수와 함께 뜹니다. 계층을 미리 정하지 않아도 연달아 내려갈 수 있습니다. <Link href="/work/exploration">자세히 →</Link></figcaption>
             </figure>
           </div>
