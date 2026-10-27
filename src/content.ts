@@ -163,7 +163,7 @@ export const PATH: { when: string; what: string; detail: string }[] = [
 export const NAV = [
   { label: '작업', href: '/#work' },
   { label: '일하는 방식', href: '/#about' },
-  { label: 'AI 협업', href: '/#agents' },
+  { label: 'AI 운용', href: '/#agents' },
   { label: '이력', href: '/#path' },
   { label: '연락', href: '/#contact' },
 ];
