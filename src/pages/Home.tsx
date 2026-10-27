@@ -54,6 +54,14 @@ export function Home() {
           </div>
         </section>
 
+        <section className="section wrap" id="product" aria-labelledby="product-h">
+          <div className="sh" data-reveal=""><span className="lbl" id="product-h">Sheet 00 — Product, GraeEye</span><p>제가 맡아 개선하는 BI 편집기의 실제 화면 · 데이터는 가상</p></div>
+          <div className="shots" data-reveal="">
+            <figure className="shot corner"><span className="fig__t">완성된 대시보드 (미리보기)</span><img src="/shots/graeeye-preview.png" alt="GraeEye 미리보기 화면: 따릉이 이용 현황 대시보드. 조회 기간·자치구 조건, KPI 4개, 일별 대여 건수·강수량 차트, 이용권 구성 도넛, 자치구별 대여 막대" loading="lazy" /><figcaption className="shot__cap">조회 조건을 고르면 KPI·차트·표가 함께 바뀝니다.</figcaption></figure>
+            <figure className="shot corner"><span className="fig__t">편집 화면</span><img src="/shots/graeeye-editor.png" alt="GraeEye 편집 화면: 왼쪽 화면 목록·데이터 소스, 가운데 캔버스, 오른쪽 페이지 설정 패널" loading="lazy" /><figcaption className="shot__cap">코드 없이 끌어다 놓아 화면을 만들고, DB 쿼리를 연결합니다.</figcaption></figure>
+          </div>
+        </section>
+
         <section className="section wrap" id="work" aria-labelledby="work-h">
           <div className="sh" data-reveal=""><span className="lbl" id="work-h">Sheet 01 — Flagship work, GraeEye</span><p>셀프서비스 BI 편집기를 전담하며 기획·설계·구현한 문제 다섯 가지 · 각 플레이트에 직접 만지는 데모</p></div>
           <div className="flag" role="list">
