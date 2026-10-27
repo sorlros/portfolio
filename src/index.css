@@ -356,3 +356,6 @@ code { font-family: var(--mono); font-size: .88em; color: var(--accent); }
 
 h2.lbl { font-weight: 500; }
 .shot__cap { margin-top: 10px; font-size: .84rem; color: var(--fg-2); }
+.lbl small { font-size: inherit; color: var(--muted); margin-left: 10px; letter-spacing: .14em; }
+.hero__title--ko { font-size: clamp(3rem, 7vw, 7rem); line-height: 1.04; letter-spacing: -.04em; }
+.nf h1 { letter-spacing: -.04em; line-height: 1.04; }

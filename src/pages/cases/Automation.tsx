@@ -7,8 +7,8 @@ export function Automation() {
     <CaseShell f={f}>
       <section className="wrap" aria-label="실제 화면">
         <div className="shots" data-reveal="">
-          <figure className="shot corner"><span className="fig__t">Fig.0 — 미리보기 (실제 제품 · 가상 데이터)</span><img src="/shots/graeeye-preview.png" alt="GraeEye 미리보기 화면: 따릉이 이용 현황 대시보드. 조회 기간·자치구 조건, KPI 4개(대여 건수·자전거당 회전율·평균 이용 시간·정기권 비중), 일별 대여 건수·강수량 차트, 이용권 구성 도넛, 자치구별 대여 막대" loading="lazy" /></figure>
-          <figure className="shot corner"><span className="fig__t">Fig.0b — 편집 화면</span><img src="/shots/graeeye-editor.png" alt="GraeEye 편집 화면: 왼쪽 화면 목록·데이터 소스, 가운데 캔버스, 오른쪽 페이지 설정 패널" loading="lazy" /></figure>
+          <figure className="shot corner"><span className="fig__t">완성된 대시보드 (미리보기 · 가상 데이터)</span><img src="/shots/graeeye-preview.png" alt="GraeEye 미리보기 화면: 따릉이 이용 현황 대시보드. 조회 기간·자치구 조건, KPI 4개(대여 건수·자전거당 회전율·평균 이용 시간·정기권 비중), 일별 대여 건수·강수량 차트, 이용권 구성 도넛, 자치구별 대여 막대" loading="lazy" /></figure>
+          <figure className="shot corner"><span className="fig__t">편집 화면</span><img src="/shots/graeeye-editor.png" alt="GraeEye 편집 화면: 왼쪽 화면 목록·데이터 소스, 가운데 캔버스, 오른쪽 페이지 설정 패널" loading="lazy" /></figure>
         </div>
       </section>
       <Block n="문제" title="쿼리를 완성해도 대시보드에 도달하지 못했습니다">

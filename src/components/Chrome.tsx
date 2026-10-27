@@ -21,7 +21,7 @@ export function Nav() {
           {NAV.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
           <Link href={PROFILE.resume} download>이력서</Link>
         </nav>
-        <button className="nav__menu" aria-expanded={open} aria-controls="menu" onClick={() => setOpen(true)}>Menu</button>
+        <button className="nav__menu" aria-expanded={open} aria-controls="menu" onClick={() => setOpen(true)}>메뉴</button>
       </header>
       <div className="menu" id="menu" data-open={open} aria-hidden={!open} style={{ transition: prefersReducedMotion ? 'none' : 'clip-path .7s cubic-bezier(.16,1,.3,1)' }}>
         <button className="menu__close" onClick={() => setOpen(false)}>닫기</button>
@@ -70,7 +70,7 @@ export function Contact() {
     <section className="contact wrap" id="contact" aria-labelledby="contact-h">
       <div className="contact__grid">
         <div>
-          <h2 className="lbl" id="contact-h" data-reveal="">Sheet 06 — Contact</h2>
+          <h2 className="lbl" id="contact-h" data-reveal="">연락 <small>Sheet 06</small></h2>
           <div className="contact__links" data-reveal="">
             <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
             <a href={PROFILE.github} target="_blank" rel="noopener noreferrer">github.com/sorlros</a>
@@ -90,7 +90,7 @@ export function Contact() {
       <footer className="footer">
         <span>© 2026 {PROFILE.name}</span>
         <span>{PROFILE.location} · {PROFILE.availability}</span>
-        <span>Drawn, not rendered · Vite · React · GSAP</span>
+        <span>Vite · React · GSAP로 직접 제작</span>
       </footer>
     </section>
   );

@@ -20,14 +20,14 @@ export function Home() {
       <main id="main">
         <section className="hero wrap" aria-labelledby="hero-h">
           <p className="hero__meta" data-hero-fade="">
-            <span><b>{PROFILE.role}</b></span><span>{PROFILE.location}</span><span>{PROFILE.availability}</span><span>rev 2026.10</span>
+            <span><b>{PROFILE.role}</b></span><span>{PROFILE.location}</span><span>{PROFILE.availability}</span><span>2026.10 기준</span>
           </p>
           <div className="hero__main">
             <div>
-              <h1 className="hero__title" id="hero-h" aria-label="Guard the DB. Show it fast. 운영 DB를 지키면서 빠르게 보여주는 BI를 만듭니다.">
-                <span data-hero-line="" aria-hidden="true"><span>Guard</span></span>
-                <span data-hero-line="" aria-hidden="true"><span className="k">the DB.</span></span>
-                <span data-hero-line="" aria-hidden="true"><span>Show it <em>fast.</em></span></span>
+              <h1 className="hero__title hero__title--ko" id="hero-h" aria-label="DB는 지키고, 화면은 빠르게.">
+                <span data-hero-line="" aria-hidden="true"><span>DB는</span></span>
+                <span data-hero-line="" aria-hidden="true"><span className="k">지키고,</span></span>
+                <span data-hero-line="" aria-hidden="true"><span>화면은 <em>빠르게.</em></span></span>
               </h1>
               <p className="hero__kr" data-hero-fade="">{PROFILE.positioning}</p>
             </div>
@@ -37,8 +37,8 @@ export function Home() {
             <div className="hero__bottom">
               <p className="hero__lede" data-hero-fade="">{PROFILE.lede}</p>
               <div className="hero__cta" data-hero-fade="">
-                <Link href="/#work" className="pill pill--solid">View work</Link>
-                <Link href={PROFILE.resume} className="pill" download>Resume PDF</Link>
+                <Link href="/#work" className="pill pill--solid">작업 보기</Link>
+                <Link href={PROFILE.resume} className="pill" download>이력서 PDF</Link>
               </div>
             </div>
           </div>
@@ -55,7 +55,7 @@ export function Home() {
         </section>
 
         <section className="section wrap" id="product" aria-labelledby="product-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="product-h">Sheet 00 — Product, GraeEye</span><p>제가 맡아 개선하는 BI 편집기의 실제 화면 · 데이터는 가상</p></div>
+          <div className="sh" data-reveal=""><span className="lbl" id="product-h">제품 화면 <small>Sheet 00</small></span><p>제가 맡아 개선하는 BI 편집기의 실제 화면 · 데이터는 가상</p></div>
           <div className="shots" data-reveal="">
             <figure className="shot corner"><span className="fig__t">완성된 대시보드 (미리보기)</span><img src="/shots/graeeye-preview.png" alt="GraeEye 미리보기 화면: 따릉이 이용 현황 대시보드. 조회 기간·자치구 조건, KPI 4개, 일별 대여 건수·강수량 차트, 이용권 구성 도넛, 자치구별 대여 막대" loading="lazy" /><figcaption className="shot__cap">조회 조건을 고르면 KPI·차트·표가 함께 바뀝니다.</figcaption></figure>
             <figure className="shot corner"><span className="fig__t">편집 화면</span><img src="/shots/graeeye-editor.png" alt="GraeEye 편집 화면: 왼쪽 화면 목록·데이터 소스, 가운데 캔버스, 오른쪽 페이지 설정 패널" loading="lazy" /><figcaption className="shot__cap">코드 없이 끌어다 놓아 화면을 만들고, DB 쿼리를 연결합니다.</figcaption></figure>
@@ -63,11 +63,11 @@ export function Home() {
         </section>
 
         <section className="section wrap" id="work" aria-labelledby="work-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="work-h">Sheet 01 — Flagship work, GraeEye</span><p>셀프서비스 BI 편집기를 전담하며 기획·설계·구현한 문제 다섯 가지 · 각 플레이트에 직접 만지는 데모</p></div>
+          <div className="sh" data-reveal=""><span className="lbl" id="work-h">대표 작업 · GraeEye <small>Sheet 01</small></span><p>BI 편집기를 맡아 기획·설계·구현한 문제 다섯 가지 · 각 페이지에 직접 눌러 보는 데모</p></div>
           <div className="flag" role="list">
             {FLAGSHIPS.map((f) => (
               <Link key={f.slug} href={f.path} label={f.name} color={f.accent} className="flag__card corner" role="listitem" data-reveal="" data-cursor="Open">
-                <span className="flag__id">Plate {f.index}</span>
+                <span className="flag__id">작업 {f.index}</span>
                 <div>
                   <div className="flag__index" aria-hidden="true">{f.index}</div>
                   <span className="flag__kicker">{f.kicker}</span>
@@ -84,7 +84,7 @@ export function Home() {
         </section>
 
         <section className="section wrap" aria-labelledby="index-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="index-h">Sheet 02 — Index</span><p>GraeEye의 다른 묶음과 회사 경력 전 1인 개발 프로젝트</p></div>
+          <div className="sh" data-reveal=""><span className="lbl" id="index-h">그 밖의 작업 <small>Sheet 02</small></span><p>GraeEye의 다른 묶음과 회사 경력 전 1인 개발 프로젝트</p></div>
           <div className="filters" role="group" aria-label="종류 필터" data-reveal="">
             {KINDS.map((k) => <button key={k} aria-pressed={kind === k} onClick={() => setKind(k)}>{k}</button>)}
           </div>
@@ -102,7 +102,7 @@ export function Home() {
         </section>
 
         <section className="section wrap" id="about" aria-labelledby="about-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="about-h">Sheet 03 — Method</span><p>PR 1,114건이 같은 틀로 남아 있는 이유</p></div>
+          <div className="sh" data-reveal=""><span className="lbl" id="about-h">일하는 방식 <small>Sheet 03</small></span><p>PR 1,114건이 같은 틀로 남아 있는 이유</p></div>
           <div className="about">
             <Scrub className="statement" text={PROFILE.statement} />
             <div className="principles">
@@ -110,7 +110,7 @@ export function Home() {
             </div>
           </div>
           <div style={{ marginTop: 'clamp(2.5rem, 6vw, 5rem)' }}>
-            <Split as="h3" className="display" text="Only what I can defend in an interview." />
+            <Split as="h3" className="display" text="면접에서 설명할 수 있는 것만 적었습니다." />
             <div className="caps" style={{ marginTop: 22 }}>
               {CAPABILITIES.map((c) => (
                 <div className="cap" key={c.title} data-reveal=""><h3>{c.title}</h3><ul role="list">{c.items.map((i) => <li key={i}>{i}</li>)}</ul></div>
@@ -120,7 +120,7 @@ export function Home() {
         </section>
 
         <section className="section wrap" id="agents" aria-labelledby="agents-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="agents-h">Sheet 04 — Working with AI agents</span><p>구현과 교차검토는 에이전트에게, 결정과 검증은 직접</p></div>
+          <div className="sh" data-reveal=""><span className="lbl" id="agents-h">AI 에이전트와 일하는 법 <small>Sheet 04</small></span><p>구현과 교차검토는 에이전트에게, 결정과 검증은 직접</p></div>
           <div className="agents">
             <div data-reveal=""><FigAgents /></div>
             <ol className="agents__flow" role="list">
@@ -138,7 +138,7 @@ export function Home() {
         </section>
 
         <section className="section wrap" id="path" aria-labelledby="path-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="path-h">Sheet 05 — Path</span><p>회사 경력은 5개월, 코드는 5년</p></div>
+          <div className="sh" data-reveal=""><span className="lbl" id="path-h">걸어온 길 <small>Sheet 05</small></span><p>회사 경력은 5개월, 코드는 5년</p></div>
           <div className="path">
             {PATH.map((p) => <div className="path__row" key={p.when} data-reveal=""><span className="mono">{p.when}</span><b>{p.what}</b><p>{p.detail}</p></div>)}
           </div>
