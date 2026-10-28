@@ -8,8 +8,6 @@ export const PROFILE = {
   phone: '010-2394-2047',
   github: 'https://github.com/sorlros',
   vercel: 'https://vercel.com/sorlros-projects',
-  resume: '/resume.pdf',
-  career: '/career.pdf',
   availability: '재직 중 · 이직 검토',
   positioning: '운영 DB를 지키면서 빠르게 보여주는 BI를, 기획부터 배포까지 만듭니다.',
   lede: '기본 구조가 잡혀 있던 셀프서비스 BI 편집기 GraeEye를 이어받아 전담으로 개선·확장하고, 공공기관 고객사(서울시설공단) 서버에 설치·운영하고 있습니다. 숫자가 맞는지는 가설이 아니라 실측으로 확인합니다.',

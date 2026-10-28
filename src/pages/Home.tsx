@@ -39,7 +39,7 @@ export function Home() {
               <p className="hero__lede" data-hero-fade="">{PROFILE.lede}</p>
               <div className="hero__cta" data-hero-fade="">
                 <Link href="/#work" className="pill pill--solid">작업 보기</Link>
-                <Link href={PROFILE.resume} className="pill" download>이력서 PDF</Link>
+                <Link href="/#contact" className="pill">연락하기</Link>
               </div>
             </div>
           </div>

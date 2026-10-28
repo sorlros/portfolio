@@ -19,14 +19,12 @@ export function Nav() {
         <Link href="/" className="nav__brand" aria-label="홈"><i aria-hidden="true" />{PROFILE.nameLatin}</Link>
         <nav className="nav__links" aria-label="주 메뉴">
           {NAV.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
-          <Link href={PROFILE.resume} download>이력서</Link>
         </nav>
         <button className="nav__menu" aria-expanded={open} aria-controls="menu" onClick={() => setOpen(true)}>메뉴</button>
       </header>
       <div className="menu" id="menu" data-open={open} aria-hidden={!open} style={{ transition: prefersReducedMotion ? 'none' : 'clip-path .7s cubic-bezier(.16,1,.3,1)' }}>
         <button className="menu__close" onClick={() => setOpen(false)}>닫기</button>
         {NAV.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
-        <a href={PROFILE.resume} download>이력서 PDF</a>
       </div>
     </>
   );
@@ -74,8 +72,6 @@ export function Contact() {
           <div className="contact__links" data-reveal="">
             <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
             <a href={PROFILE.github} target="_blank" rel="noopener noreferrer">github.com/sorlros</a>
-            <a href={PROFILE.resume} download>이력서 PDF 내려받기</a>
-            <a href={PROFILE.career} download>경력기술서 PDF 내려받기</a>
           </div>
         </div>
         <form className="form" onSubmit={onSubmit} data-reveal="" aria-describedby="form-status">
