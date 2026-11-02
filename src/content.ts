@@ -10,7 +10,7 @@ export const PROFILE = {
   vercel: 'https://vercel.com/sorlros-projects',
   availability: '재직 중 · 이직 검토',
   positioning: '운영 DB를 지키면서 빠르게 보여주는 BI를, 기획부터 배포까지 만듭니다.',
-  lede: '기본 구조가 잡혀 있던 셀프서비스 BI 편집기 GraeEye를 이어받아 전담으로 개선·확장하고, 공공기관 고객사(서울시설공단) 서버에 설치·운영하고 있습니다. 숫자가 맞는지는 가설이 아니라 실측으로 확인합니다.',
+  lede: '셀프서비스 BI 편집기 GraeEye를 전담 개발하고, 공공기관 고객사(서울시설공단) 서버에 설치·운영하고 있습니다. 숫자가 맞는지는 가설이 아니라 실측으로 확인합니다.',
   statement:
     '대시보드는 숫자가 틀리면 존재 이유가 없습니다. 그래서 저는 "필터를 걸었는데 숫자가 다르다"는 신고 하나를 4종 DB 실측으로 끝까지 추적하고, 조회가 운영 DB를 해치지 않도록 상한과 취소 경로를 먼저 만듭니다. 무엇을 만들지도 직접 정합니다. 비개발자가 몇 번의 조작으로 믿을 수 있는 대시보드에 도달하는지를 중심 질문으로 두고, 결정은 결정표와 목업으로 남깁니다. 5개월간 머지한 PR 1,114건은 전부 문제·접근·검증·남은 위험을 적은 본문과 함께 남아 있습니다.',
 };
@@ -152,7 +152,7 @@ export const CAPABILITIES: { title: string; items: string[] }[] = [
 ];
 
 export const PATH: { when: string; what: string; detail: string }[] = [
-  { when: '2026.06 — 현재', what: '비즈플러그 · 풀스택 개발자', detail: '기본 구조가 있던 GraeEye BI 편집기를 이어받아 전담 개선·확장. 서울시설공단 서버 원격 설치(08) → 장애 수리 후 재배포(10).' },
+  { when: '2026.06 — 현재', what: '비즈플러그 · 풀스택 개발자', detail: 'GraeEye BI 편집기 전담 개발. 서울시설공단 서버 원격 설치(08) → 장애 수리 후 재배포(10).' },
   { when: '2026.01 — 05', what: '1인 개발 · AI 응용', detail: 'NovelAIne, Orbit Agent Web, ServerOps Simulator, Wall-E(팀장 · 아키텍처 · 영상 서버 · AI 추론 백엔드).' },
   { when: '2022 — 2024', what: '1인 개발 · 웹', detail: 'Vue 3 → React/Next.js. TypeScript 웹앱 20여 개 구현·배포.' },
   { when: '2011 — 2018', what: '충북대학교 바이오시스템공학과', detail: '중퇴. GTQ 1급·웹디자인기능사(2020).' },

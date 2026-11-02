@@ -56,7 +56,7 @@ export function Home() {
         </section>
 
         <section className="section wrap" id="product" aria-labelledby="product-h">
-          <div className="sh" data-reveal=""><span className="lbl" id="product-h">제품 화면 <small>Sheet 00</small></span><p>제가 맡아 개선하는 BI 편집기를 실제로 조작한 화면 · 데이터는 가상</p></div>
+          <div className="sh" data-reveal=""><span className="lbl" id="product-h">제품 화면 <small>Sheet 00</small></span><p>제가 개발하는 BI 편집기를 실제로 조작한 화면 · 데이터는 가상</p></div>
           <div className="shots shots--clips" data-reveal="">
             <figure className="shot corner">
               <span className="fig__t">대시보드 구성 자동화</span>
