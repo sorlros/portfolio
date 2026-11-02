@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { AI_FLOW, AI_STATS, CAPABILITIES, FLAGSHIPS, PATH, PRINCIPLES, PROFILE, STATS, WORKS, type WorkKind } from '../content';
+import { AI_FLOW, AI_STATS, AI_SETUP, AI_REVIEW_DOC, AI_REVIEW_RULES, AI_INCIDENTS, CAPABILITIES, FLAGSHIPS, PATH, PRINCIPLES, PROFILE, STATS, WORKS, type WorkKind } from '../content';
 import { Link } from '../lib/router';
 import { Scrub, Split, useHeroIntro, useMeta, useReveals } from '../lib/motion';
 import { Contact, Nav } from '../components/Chrome';
@@ -125,6 +125,34 @@ export function Home() {
           </div>
           <div className="hero__stats" data-reveal="" style={{ marginTop: 28 }}>
             {AI_STATS.map((s, i) => <div className="stat" key={s.label} data-n={`AI-${i + 1}`}><b className="num">{s.value}</b><span>{s.label}</span><small>{s.note}</small></div>)}
+          </div>
+
+          <h3 className="agents__h" data-reveal=""><span className="mono">03-A</span>운용 구성</h3>
+          <div className="caps">
+            {AI_SETUP.map((c) => (
+              <div className="cap" key={c.title} data-reveal=""><h3>{c.title}</h3><ul role="list">{c.items.map((i) => <li key={i}>{i}</li>)}</ul></div>
+            ))}
+          </div>
+
+          <h3 className="agents__h" data-reveal=""><span className="mono">03-B</span>교차검토 의뢰서 — 8개 절 고정 양식</h3>
+          <div className="review">
+            <ol className="review__doc" role="list">
+              {AI_REVIEW_DOC.map((d) => <li key={d.no} data-reveal=""><span className="mono">{d.no}</span><b>{d.name}</b><p>{d.body}</p></li>)}
+            </ol>
+            <div className="principles">
+              {AI_REVIEW_RULES.map((p) => <div className="principle" key={p.title} data-reveal=""><h3>{p.title}</h3><p>{p.body}</p></div>)}
+            </div>
+          </div>
+
+          <h3 className="agents__h" data-reveal=""><span className="mono">03-C</span>사고에서 만든 규칙</h3>
+          <div className="incidents" role="list">
+            <div className="incidents__row incidents__row--head" aria-hidden="true"><span className="mono">사고</span><span className="mono">그 뒤의 규칙</span></div>
+            {AI_INCIDENTS.map((r, i) => (
+              <div className="incidents__row" key={r.rule} role="listitem" data-reveal="">
+                <p><span className="incidents__n">{String(i + 1).padStart(2, '0')}</span>{r.what}</p>
+                <p className="incidents__rule">{r.rule}</p>
+              </div>
+            ))}
           </div>
         </section>
 
