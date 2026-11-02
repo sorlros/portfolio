@@ -404,3 +404,32 @@ h2.lbl { font-weight: 500; }
   .review__doc li { grid-template-columns: 30px 1fr; } .review__doc li p { grid-column: 2; }
   .incidents__row { grid-template-columns: 1fr; gap: 6px; } .incidents__row--head { display: none; }
 }
+
+/* ───── Jev 라우팅 자동화 ───── */
+.jev__lede { max-width: 78ch; color: var(--fg-2); font-size: .98rem; margin-bottom: 20px; }
+.jev__pipe { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line-strong); border-radius: 4px; }
+.jev__pipe li { padding: 18px 20px; border-right: 1px dashed var(--line-strong); position: relative; }
+.jev__pipe li:last-child { border-right: 0; }
+.jev__pipe li:not(:last-child)::after { content: '→'; position: absolute; right: -9px; top: 16px; color: var(--accent); background: var(--bg); padding: 0 2px; font-size: .9rem; }
+.jev__pipe b { display: block; font-weight: 700; margin: 6px 0 6px; }
+.jev__pipe p { font-size: .86rem; color: var(--fg-2); }
+.jev__cols { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(1.5rem, 4vw, 3.5rem); margin-top: clamp(1.8rem, 4vw, 2.8rem); align-items: start; }
+.jev__sub { display: block; margin: 0 0 12px; font-weight: 500; }
+.jev__cols + .jev__sub { margin-top: clamp(1.8rem, 4vw, 2.8rem); }
+.cmp { width: 100%; border-collapse: collapse; font-size: .88rem; }
+.cmp th, .cmp td { text-align: left; vertical-align: top; padding: 11px 10px; border-bottom: 1px dashed var(--line-strong); }
+.cmp thead th { font-family: var(--mono); font-size: .66rem; letter-spacing: .12em; color: var(--muted); font-weight: 500; border-top: 1px dashed var(--line-strong); }
+.cmp tbody th { font-weight: 700; white-space: nowrap; color: var(--fg); }
+.cmp td { color: var(--fg-2); }
+.cmp td:last-child { color: var(--fg); }
+.jev__tune p { font-size: .88rem; color: var(--fg-2); }
+@media (max-width: 1000px) {
+  .jev__pipe { grid-template-columns: 1fr 1fr; } .jev__pipe li:nth-child(2) { border-right: 0; } .jev__pipe li:nth-child(-n+2) { border-bottom: 1px dashed var(--line-strong); } .jev__pipe li:nth-child(2)::after { display: none; }
+  .jev__cols { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .jev__pipe { grid-template-columns: 1fr; } .jev__pipe li { border-right: 0; border-bottom: 1px dashed var(--line-strong); } .jev__pipe li:last-child { border-bottom: 0; } .jev__pipe li::after { display: none; }
+  .cmp thead { display: none; } .cmp tr { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px dashed var(--line-strong); padding: 8px 0; }
+  .cmp tbody th { grid-column: 1 / -1; padding-bottom: 2px; } .cmp th, .cmp td { border-bottom: 0; padding: 4px 6px; }
+  .cmp td:first-of-type::before { content: '전 · '; color: var(--muted); } .cmp td:last-child::before { content: '후 · '; color: var(--accent); }
+}

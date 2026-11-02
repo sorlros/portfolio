@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { AI_FLOW, AI_STATS, AI_SETUP, AI_REVIEW_DOC, AI_REVIEW_RULES, AI_INCIDENTS, CAPABILITIES, FLAGSHIPS, PATH, PRINCIPLES, PROFILE, STATS, WORKS, type WorkKind } from '../content';
+import { AI_FLOW, AI_STATS, AI_SETUP, AI_REVIEW_DOC, AI_REVIEW_RULES, AI_INCIDENTS, JEV_PIPE, JEV_AUTOMATED, JEV_COMPARE, JEV_STATS, JEV_TUNING, CAPABILITIES, FLAGSHIPS, PATH, PRINCIPLES, PROFILE, STATS, WORKS, type WorkKind } from '../content';
 import { Link } from '../lib/router';
 import { Scrub, Split, useHeroIntro, useMeta, useReveals } from '../lib/motion';
 import { Contact, Nav } from '../components/Chrome';
@@ -134,7 +134,35 @@ export function Home() {
             ))}
           </div>
 
-          <h3 className="agents__h" data-reveal=""><span className="mono">03-B</span>교차검토 의뢰서 — 8개 절 고정 양식</h3>
+          <h3 className="agents__h" data-reveal=""><span className="mono">03-B</span>Jev 연동 작업 라우팅 자동화</h3>
+          <p className="jev__lede" data-reveal="">Claude Code에 프롬프트를 보낼 때마다 판정 모델 Jev(TypeSafe System One)가 먼저 읽고, 맞는 스킬과 서브에이전트에 맡길 모델 · 추론 강도, 요청의 모호함을 한두 줄로 붙여 줍니다. 개인 설정의 UserPromptSubmit 훅으로 직접 만들었습니다. Jev는 글을 생성하지 않고 확률만 돌려주는 판정 모델이라, 최종 결정은 여전히 Claude와 제가 합니다.</p>
+          <ol className="jev__pipe" role="list">
+            {JEV_PIPE.map((p) => <li key={p.step} data-reveal=""><span className="mono">{p.step}</span><b>{p.title}</b><p>{p.body}</p></li>)}
+          </ol>
+          <div className="hero__stats" data-reveal="" style={{ marginTop: 18 }}>
+            {JEV_STATS.map((s, i) => <div className="stat" key={s.label} data-n={`JEV-${i + 1}`}><b className="num">{s.value}</b><span>{s.label}</span><small>{s.note}</small></div>)}
+          </div>
+          <div className="jev__cols">
+            <div>
+              <h4 className="jev__sub mono">자동화된 작업</h4>
+              <div className="principles">
+                {JEV_AUTOMATED.map((p) => <div className="principle" key={p.title} data-reveal=""><h3>{p.title}</h3><p>{p.body}</p></div>)}
+              </div>
+            </div>
+            <div>
+              <h4 className="jev__sub mono">전과 비교 — 키워드 훅 → Jev 라우팅 훅</h4>
+              <table className="cmp">
+                <thead><tr><th scope="col">항목</th><th scope="col">전</th><th scope="col">후</th></tr></thead>
+                <tbody>{JEV_COMPARE.map((r) => <tr key={r.item}><th scope="row">{r.item}</th><td>{r.before}</td><td>{r.after}</td></tr>)}</tbody>
+              </table>
+            </div>
+          </div>
+          <h4 className="jev__sub mono">측정으로 조정한 기록</h4>
+          <div className="caps">
+            {JEV_TUNING.map((c) => <div className="cap jev__tune" key={c.title} data-reveal=""><h3>{c.title}</h3><p>{c.body}</p></div>)}
+          </div>
+
+          <h3 className="agents__h" data-reveal=""><span className="mono">03-C</span>교차검토 의뢰서 — 8개 절 고정 양식</h3>
           <div className="review">
             <ol className="review__doc" role="list">
               {AI_REVIEW_DOC.map((d) => <li key={d.no} data-reveal=""><span className="mono">{d.no}</span><b>{d.name}</b><p>{d.body}</p></li>)}
@@ -144,7 +172,7 @@ export function Home() {
             </div>
           </div>
 
-          <h3 className="agents__h" data-reveal=""><span className="mono">03-C</span>사고에서 만든 규칙</h3>
+          <h3 className="agents__h" data-reveal=""><span className="mono">03-D</span>사고에서 만든 규칙</h3>
           <div className="incidents" role="list">
             <div className="incidents__row incidents__row--head" aria-hidden="true"><span className="mono">사고</span><span className="mono">그 뒤의 규칙</span></div>
             {AI_INCIDENTS.map((r, i) => (
