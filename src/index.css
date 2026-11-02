@@ -433,3 +433,6 @@ h2.lbl { font-weight: 500; }
   .cmp tbody th { grid-column: 1 / -1; padding-bottom: 2px; } .cmp th, .cmp td { border-bottom: 0; padding: 4px 6px; }
   .cmp td:first-of-type::before { content: '전 · '; color: var(--muted); } .cmp td:last-child::before { content: '후 · '; color: var(--accent); }
 }
+.wiki__cmds li { grid-template-columns: 70px 1fr; }
+.wiki__cmds b.mono { font-size: .82rem; letter-spacing: .02em; text-transform: none; }
+@media (max-width: 600px) { .wiki__cmds li { grid-template-columns: 1fr; } .wiki__cmds li p { grid-column: 1; } }

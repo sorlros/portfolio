@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { AI_FLOW, AI_STATS, AI_SETUP, AI_REVIEW_DOC, AI_REVIEW_RULES, AI_INCIDENTS, JEV_PIPE, JEV_AUTOMATED, JEV_COMPARE, JEV_STATS, JEV_TUNING, CAPABILITIES, FLAGSHIPS, PATH, PRINCIPLES, PROFILE, STATS, WORKS, type WorkKind } from '../content';
+import { AI_FLOW, AI_STATS, AI_SETUP, AI_REVIEW_DOC, AI_REVIEW_RULES, AI_INCIDENTS, JEV_PIPE, JEV_AUTOMATED, JEV_COMPARE, JEV_STATS, JEV_TUNING, WIKI_STATS, WIKI_COMMANDS, WIKI_RULES, CAPABILITIES, FLAGSHIPS, PATH, PRINCIPLES, PROFILE, STATS, WORKS, type WorkKind } from '../content';
 import { Link } from '../lib/router';
 import { Scrub, Split, useHeroIntro, useMeta, useReveals } from '../lib/motion';
 import { Contact, Nav } from '../components/Chrome';
@@ -162,7 +162,27 @@ export function Home() {
             {JEV_TUNING.map((c) => <div className="cap jev__tune" key={c.title} data-reveal=""><h3>{c.title}</h3><p>{c.body}</p></div>)}
           </div>
 
-          <h3 className="agents__h" data-reveal=""><span className="mono">03-C</span>교차검토 의뢰서 — 8개 절 고정 양식</h3>
+          <h3 className="agents__h" data-reveal=""><span className="mono">03-C</span>세컨드브레인 위키 — 옵시디언 × Claude</h3>
+          <p className="jev__lede" data-reveal="">작업하며 익힌 개념 · 결정 근거 · 함정을 옵시디언 볼트에 문서로 쌓고, Claude가 같은 볼트를 읽고 쓰게 했습니다. 볼트 안에 전용 명령과 작성 규칙을 두어, 어느 세션에서든 같은 방식으로 적재하고 같은 근거로 답하게 합니다.</p>
+          <div className="hero__stats" data-reveal="">
+            {WIKI_STATS.map((s, i) => <div className="stat" key={s.label} data-n={`WIKI-${i + 1}`}><b className="num">{s.value}</b><span>{s.label}</span><small>{s.note}</small></div>)}
+          </div>
+          <div className="jev__cols">
+            <div>
+              <h4 className="jev__sub mono">위키 전용 명령</h4>
+              <ol className="review__doc wiki__cmds" role="list">
+                {WIKI_COMMANDS.map((c) => <li key={c.cmd} data-reveal=""><b className="mono">{c.cmd}</b><p>{c.body}</p></li>)}
+              </ol>
+            </div>
+            <div>
+              <h4 className="jev__sub mono">운영 규칙</h4>
+              <div className="principles">
+                {WIKI_RULES.map((p) => <div className="principle" key={p.title} data-reveal=""><h3>{p.title}</h3><p>{p.body}</p></div>)}
+              </div>
+            </div>
+          </div>
+
+          <h3 className="agents__h" data-reveal=""><span className="mono">03-D</span>교차검토 의뢰서 — 8개 절 고정 양식</h3>
           <div className="review">
             <ol className="review__doc" role="list">
               {AI_REVIEW_DOC.map((d) => <li key={d.no} data-reveal=""><span className="mono">{d.no}</span><b>{d.name}</b><p>{d.body}</p></li>)}
@@ -172,7 +192,7 @@ export function Home() {
             </div>
           </div>
 
-          <h3 className="agents__h" data-reveal=""><span className="mono">03-D</span>사고에서 만든 규칙</h3>
+          <h3 className="agents__h" data-reveal=""><span className="mono">03-E</span>사고에서 만든 규칙</h3>
           <div className="incidents" role="list">
             <div className="incidents__row incidents__row--head" aria-hidden="true"><span className="mono">사고</span><span className="mono">그 뒤의 규칙</span></div>
             {AI_INCIDENTS.map((r, i) => (
