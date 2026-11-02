@@ -1,10 +1,24 @@
-import { useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { AI_FLOW, AI_STATS, AI_SETUP, AI_REVIEW_DOC, AI_REVIEW_RULES, AI_INCIDENTS, JEV_PIPE, JEV_AUTOMATED, JEV_COMPARE, JEV_STATS, JEV_TUNING, WIKI_STATS, WIKI_COMMANDS, WIKI_RULES, CAPABILITIES, FLAGSHIPS, PATH, PRINCIPLES, PROFILE, STATS, WORKS, type WorkKind } from '../content';
 import { Link } from '../lib/router';
 import { Scrub, Split, useHeroIntro, useMeta, useReveals } from '../lib/motion';
 import { Contact, Nav } from '../components/Chrome';
 import { Fig, FigAgents } from '../components/Fig';
 import { Clip } from '../components/Clip';
+
+const WikiGraph = lazy(() => import('../components/WikiGraph'));
+
+// 그래프 코드와 데이터(약 0.9MB)는 섹션이 가까워질 때만 받는다
+function LazyWikiGraph() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [near, setNear] = useState(false);
+  useEffect(() => {
+    const el = ref.current; if (!el) return;
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { setNear(true); io.disconnect(); } }, { rootMargin: '600px 0px' });
+    io.observe(el); return () => io.disconnect();
+  }, []);
+  return <div ref={ref} className="wg__slot">{near && <Suspense fallback={<div className="wg__wait">그래프 불러오는 중…</div>}><WikiGraph /></Suspense>}</div>;
+}
 
 const KINDS: (WorkKind | '전체')[] = ['전체', 'BI', 'Systems', 'AI', 'Web'];
 const MARQ = ['운영 DB 보호', '대시보드 자동 구성', '고객사 배포·장애 수리', 'SQL 안전 판정', '실측으로 확인', '기획부터 배포까지'];
@@ -167,6 +181,7 @@ export function Home() {
           <div className="hero__stats" data-reveal="">
             {WIKI_STATS.map((s, i) => <div className="stat" key={s.label} data-n={`WIKI-${i + 1}`}><b className="num">{s.value}</b><span>{s.label}</span><small>{s.note}</small></div>)}
           </div>
+          <LazyWikiGraph />
           <div className="jev__cols">
             <div>
               <h4 className="jev__sub mono">위키 전용 명령</h4>
